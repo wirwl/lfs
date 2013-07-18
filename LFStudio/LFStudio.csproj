@@ -1,0 +1,369 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8EBFFC38-8150-4433-9001-3737504F82AD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LFStudio</RootNamespace>
+    <AssemblyName>LFStudio</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>XYNTA2_20110708.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ContextMenuCollection.cs" />
+    <Compile Include="Controls\AnimatedSprite.cs" />
+    <Compile Include="Controls\AnimatedSpriteDrawingCore.cs" />
+    <Compile Include="Controls\lfImage.cs" />
+    <Compile Include="G.cs" />
+    <Compile Include="Host.cs" />
+    <Compile Include="IPlugin.cs" />
+    <Compile Include="MouseHandlingMode.cs" />
+    <Compile Include="ProgramPipeTest.cs" />
+    <Compile Include="Tools.cs" />
+    <Compile Include="Types\adce.cs" />
+    <Compile Include="Types\dgExtentedSpriteAnimator.cs" />
+    <Compile Include="Types\esaData.cs" />
+    <Compile Include="Types\GifHelper.cs" />
+    <Compile Include="Types\TaskHighlight.cs" />
+    <Compile Include="Types\cProject.cs" />
+    <Compile Include="Types\gfErrors.cs" />
+    <Compile Include="Types\Lang.cs" />
+    <Compile Include="Types\lfItem.cs" />
+    <Compile Include="Types\Tool.cs" />
+    <Compile Include="Types\Types.cs" />
+    <Compile Include="Types\WPFColorList.cs" />
+    <Compile Include="Utils\AvalonDock.cs" />
+    <Compile Include="Utils\AvalonEdit.cs" />
+    <Compile Include="Utils\ComboBoxUtils.cs" />
+    <Compile Include="Utils\Const.cs" />
+    <Compile Include="Utils\DatFiles.cs" />
+    <Compile Include="Utils\functions.cs" />
+    <Compile Include="Utils\Graphic.cs" />
+    <Compile Include="Utils\lfFiltr.cs" />
+    <Compile Include="Utils\MathUtils.cs" />
+    <Compile Include="Utils\Menu.cs" />
+    <Compile Include="Utils\Project.cs" />
+    <Compile Include="Utils\tv.cs" />
+    <Compile Include="Windows\00wFind.xaml.cs">
+      <DependentUpon>00wFind.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\old_wProject.xaml.cs">
+      <DependentUpon>old_wProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\OutputReader.cs" />
+    <Compile Include="Windows\wAbout.xaml.cs">
+      <DependentUpon>wAbout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wCreateNewFolder.xaml.cs">
+      <DependentUpon>wCreateNewFolder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wException.xaml.cs">
+      <DependentUpon>wException.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wGetListCodepages.xaml.cs">
+      <DependentUpon>wGetListCodepages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wGotoLine.xaml.cs">
+      <DependentUpon>wGotoLine.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wHotkeys.xaml.cs">
+      <DependentUpon>wHotkeys.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wImportProject.xaml.cs">
+      <DependentUpon>wImportProject.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wOptions.xaml.cs">
+      <DependentUpon>wOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wProjectOptions.xaml.cs">
+      <DependentUpon>wProjectOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wPromtArgs.xaml.cs">
+      <DependentUpon>wPromtArgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wSaveManyFiles.xaml.cs">
+      <DependentUpon>wSaveManyFiles.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wSaveOneFile.xaml.cs">
+      <DependentUpon>wSaveOneFile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\wReplace.xaml.cs">
+      <DependentUpon>wReplace.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XmlLanguageDictionary.cs" />
+    <Page Include="Controls\EditableTextBlock.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MessageBoxInformation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\MessageBoxQuestion.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="AvalonEdit\Lf2FoldingStrategy.cs" />
+    <Compile Include="AvalonEdit\LinesBackgroundRenderer.cs" />
+    <Compile Include="AvalonEdit\MyCompletionData.cs" />
+    <Compile Include="AvalonEdit\XBackgroundRenderer.cs" />
+    <Compile Include="Controls\BitmapEx\Bgra32Pixel.cs" />
+    <Compile Include="Controls\BitmapEx\ChainedBitmap.cs" />
+    <Compile Include="Controls\BitmapEx\ColorKeyBitmap.cs" />
+    <Compile Include="Controls\BitmapEx\CustomBitmap.cs" />
+    <Compile Include="Controls\BitmapEx\GrayscaleBitmap.cs" />
+    <Compile Include="Controls\BitmapEx\SepiaBitmap.cs" />
+    <Compile Include="Controls\EditableTextBlock.xaml.cs">
+      <DependentUpon>EditableTextBlock.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\lfDrawingCanvas.cs" />
+    <Compile Include="Controls\lfDrawingVisual.cs" />
+    <Compile Include="Controls\lfSelectRegion.cs" />
+    <Compile Include="Controls\lfTreeViewItem.cs" />
+    <Compile Include="Controls\MessageBoxInformation.xaml.cs">
+      <DependentUpon>MessageBoxInformation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MessageBoxQuestion.xaml.cs">
+      <DependentUpon>MessageBoxQuestion.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MyMediaPlayer.cs" />
+    <Compile Include="Controls\vc_BoolToVisiblity.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\00wFind.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\old_wProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wAbout.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wCreateNewFolder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wException.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wGetListCodepages.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wGotoLine.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wHotkeys.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wImportProject.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wProjectOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wPromtArgs.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wSaveManyFiles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wSaveOneFile.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\wReplace.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\anothertype.png" />
+    <Resource Include="Img\canvas.png" />
+    <Resource Include="Img\coor.png" />
+    <SplashScreen Include="Img\firen50.png" />
+    <Resource Include="Img\folderfold.png" />
+    <Resource Include="Img\folderunfold.png" />
+    <Resource Include="Img\icons\CopyHS.png" />
+    <Resource Include="Img\icons\CutHS.png" />
+    <Resource Include="Img\icons\DeleteHS.png" />
+    <Resource Include="Img\icons\Edit_RedoHS.png" />
+    <Resource Include="Img\icons\Edit_UndoHS.png" />
+    <Resource Include="Img\icons\FindHS.png" />
+    <Resource Include="Img\icons\FindNextHS.png" />
+    <Resource Include="Img\icons\FormRunHS.png" />
+    <Resource Include="Img\icons\NewDocumentHS.png" />
+    <Resource Include="Img\icons\Open.png" />
+    <Resource Include="Img\icons\openHS.png" />
+    <Resource Include="Img\icons\PasteHS.png" />
+    <Resource Include="Img\icons\SaveAllHS.png" />
+    <Resource Include="Img\icons\saveHS.png" />
+    <Resource Include="Img\Information48.png" />
+    <Resource Include="Img\project.png" />
+    <Resource Include="Img\projects.png" />
+    <Resource Include="Img\Question48.png" />
+    <Resource Include="Img\s.bmp" />
+    <Resource Include="Img\SGV\all2.png" />
+    <Resource Include="Img\SGV\allbdy2.png" />
+    <Resource Include="Img\SGV\allitr2.png" />
+    <Resource Include="Img\SGV\ff1.png" />
+    <Resource Include="Img\SGV\ff2.png" />
+    <Resource Include="Img\SGV\ffb.png" />
+    <Resource Include="Img\SGV\minus.png" />
+    <Resource Include="Img\SGV\nf.png" />
+    <Resource Include="Img\SGV\plus.png" />
+    <Resource Include="Img\SGV\set5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ThirdParty\AvalonDock\AvalonDock.csproj">
+      <Project>{87e61430-4243-45f2-b74e-0a4c096cebf3}</Project>
+      <Name>AvalonDock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\FindReplace\FindReplace.csproj">
+      <Project>{f6237b7d-9a3b-4f55-961b-72035b0dea4d}</Project>
+      <Name>FindReplace</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\Gif\Components.csproj">
+      <Project>{1c3a03ca-5e55-4cc4-9746-194a4188960a}</Project>
+      <Name>Components</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\ICSharpCode.AvalonEdit\ICSharpCode.AvalonEdit.csproj">
+      <Project>{6c55b776-26d4-4db3-a6ab-87e783b2f3d1}</Project>
+      <Name>ICSharpCode.AvalonEdit</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\Localization\Localization.csproj">
+      <Project>{6c0438ef-c94d-4a3e-b14c-92575fecee6c}</Project>
+      <Name>Localization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\SplitButton\SplitButton.csproj">
+      <Project>{a75fa431-b3d7-4ac6-8033-cde76fa98c97}</Project>
+      <Name>SplitButton</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ThirdParty\ZoomAndPan\ZoomAndPan.csproj">
+      <Project>{468adede-6f5e-40c0-99c9-c6dac4fac934}</Project>
+      <Name>ZoomAndPan</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="XYNTA2_20110708.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Img\SGV\refresh.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Img\AP\PauseHS.png" />
+    <Resource Include="Img\AP\PlayHS.png" />
+    <Resource Include="Img\AP\StopHS.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

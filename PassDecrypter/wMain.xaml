@@ -1,0 +1,17 @@
+﻿<Window x:Class="PassDecrypter.wMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner"
+        
+        Title="Password Decrypter" Height="356" Width="583" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit">
+    <Grid>
+        <Label   Height="28" HorizontalAlignment="Left" Margin="12,35,0,0" Name="lSF" VerticalAlignment="Top" Content="Selected file: " />
+        <Button   Content="Choose dat file" Height="23" HorizontalAlignment="Left" Margin="12,12,0,0" Name="bCDF" VerticalAlignment="Top" Width="99" Click="bCDF_Click" />
+        <Button Content="Start decrypting" Height="23" HorizontalAlignment="Left" Margin="127,12,0,0" Name="bSD" VerticalAlignment="Top" Width="99" Click="bSD_Click" />
+        <Label   Content="Detect password length:" Height="28" HorizontalAlignment="Left" Margin="351,11,0,0" Name="lDPL" VerticalAlignment="Top"  />
+        <Label  Content="Password: " Height="28" HorizontalAlignment="Left" Margin="12,60,0,0" Name="lPass" VerticalAlignment="Top" />
+        <avalonedit:TextEditor   HorizontalAlignment="Stretch" Margin="0,86,0,0" Name="teLog" VerticalAlignment="Stretch" />
+        <Label Content="" Height="28" HorizontalAlignment="Left" Margin="489,11,0,0" Name="lLength" VerticalAlignment="Top" />
+        <CheckBox Content="Check all lengths" Height="16" HorizontalAlignment="Left" Margin="232,17,0,0" Name="cbCAL" VerticalAlignment="Top" />
+    </Grid>
+</Window>

@@ -1,0 +1,21 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wException"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        WindowStartupLocation="CenterOwner"
+        Background="{DynamicResource winbkgcolor}"
+        loc:Translate.Uid="wtError"
+        Title="{loc:Translate Error!}" Height="271" Width="536" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit">
+    <Grid x:Uid="Grid_1">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="rd1" x:Name="rd1"  Height="*"/>
+            <RowDefinition x:Uid="rd2" x:Name="rd2"  Height="40"/>
+        </Grid.RowDefinitions>
+        <avalonedit:TextEditor   x:Uid="tbShowError" Name="tbShowError"  IsReadOnly="True"  WordWrap="False" ShowLineNumbers="True" />
+        <Button x:Uid="bCC" Click="bCC_Click" x:Name="bCC" loc:Translate.Uid="bCTC" Content="{loc:Translate Copy to clipboard}" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="12,5,0,0"  VerticalAlignment="Top" Width="122"  />
+        <Button x:Uid="bCon" Click="bCon_Click" x:Name="bCon" loc:Translate.Uid="bCon" Content="{loc:Translate Continue}" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="140,5,0,0" VerticalAlignment="Top" Width="75"  />
+        <Button x:Uid="Exit" Click="Exit_Click" x:Name="Exit" loc:Translate.Uid="bExit" Content="{loc:Translate Exit from Application}" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="221,5,0,0"  VerticalAlignment="Top" Width="124"  />
+        <Button x:Uid="bSendEmail" loc:Translate.Uid="bSMF" Content="{loc:Translate Save modefied files}" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="352,6,0,0" Name="bSendEmail" VerticalAlignment="Top" Width="147" Click="bSendEmail_Click_1" />
+    </Grid>
+    
+</Window>

@@ -1,0 +1,15 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wGotoLine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        WindowStartupLocation="CenterOwner"
+        Background="{DynamicResource winbkgcolor}"
+        
+        loc:Translate.Uid="wtGTL"
+        Title="{loc:Translate Go to line...}" Height="92" Width="166" Loaded="Window_Loaded" WindowStyle="ToolWindow">
+    <!--   Background="#E9ECFA" -->
+    <Grid x:Uid="Grid_1">        
+        <Label x:Uid="lnum" x:Name="lnum" loc:Translate.Uid="lLN" Content="{loc:Translate Line number}" Height="28" HorizontalAlignment="Left" Margin="10,0,0,0"  VerticalAlignment="Top" />
+        <TextBox x:Uid="tbLine" Height="23" HorizontalAlignment="Left" Margin="12,23,0,0" Name="tbLine" VerticalAlignment="Top" Width="120" KeyDown="textBox1_KeyDown" />
+    </Grid>
+</Window>

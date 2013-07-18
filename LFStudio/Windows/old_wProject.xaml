@@ -1,0 +1,17 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wProject"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Background="#E9ECFA"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Title="Project properties"  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" Height="214" Width="549" WindowStyle="SingleBorderWindow">
+    <Grid x:Uid="Grid_1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Label x:Uid="label1" Content="Path to game executeable" FontWeight="Bold" Height="27" Margin="10,10,300,138" Name="label1" Width="217" />
+        <TextBox x:Uid="tbPathExe" Height="23" HorizontalAlignment="Left" Margin="10,0,0,117" Name="tbPathExe" VerticalAlignment="Bottom" Width="332" />
+        <Button x:Uid="button1" Click="button1_Click" Content="Browse..." Height="23" HorizontalAlignment="Right" Margin="0,0,116,118" Name="button1" VerticalAlignment="Bottom" Width="59" />
+        <Label x:Uid="label3" Content="Secret word for (de)crypting files (Please don't edit if you don't know what is it)" FontWeight="Bold" Height="27" Margin="10,0,26,82" Name="label3" VerticalAlignment="Bottom" />
+        <TextBox x:Uid="tbPass" Height="23" Margin="10,0,185,53" Name="tbPass" VerticalAlignment="Bottom" />
+        <Button x:Uid="bSave" Click="bSave_Click" Content="Save" Height="23" HorizontalAlignment="Right" Margin="0,0,116,17" Name="bSave" VerticalAlignment="Bottom" Width="75" />
+        <Button x:Uid="bChancel" Click="bChancel_Click_1" Content="Chancel" Height="23" HorizontalAlignment="Right" Margin="0,0,26,17" Name="bChancel" VerticalAlignment="Bottom" Width="75" />
+    </Grid>
+</Window>

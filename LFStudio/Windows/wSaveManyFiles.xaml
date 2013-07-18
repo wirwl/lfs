@@ -1,0 +1,16 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wSaveManyFiles"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="{DynamicResource winbkgcolor}"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        Closed="Window_Closed"
+        Title="Question" Height="214" Width="347">
+    <Grid x:Uid="Grid_1">
+        <Button x:Uid="bSC" Content="Save and Exit" Height="23" HorizontalAlignment="Left" Margin="13,140,0,0" Name="bSC" VerticalAlignment="Top" Width="91" Click="bSC_Click"  />
+        <Button x:Uid="bDSC" Content="Don't save and Exit" Height="23" HorizontalAlignment="Left" Margin="110,140,0,0" Name="bDSC" VerticalAlignment="Top" Width="123" Click="bDSC_Click" />
+        <Button x:Uid="bCancel" Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="239,140,0,0" Name="bCancel" VerticalAlignment="Top" Width="75" Click="bCancel_Click" />
+        <ListBox x:Uid="lbList" Height="99" HorizontalAlignment="Left" Margin="12,35,0,0" Name="lbList" VerticalAlignment="Top" Width="302" />
+        <Label x:Uid="label1" Content="There are not saved files. What do you want to do?" Height="28" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" Width="300" />
+    </Grid>
+</Window>

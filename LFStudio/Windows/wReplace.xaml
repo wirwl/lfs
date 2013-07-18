@@ -1,0 +1,25 @@
+﻿<Window x:Class="LFStudio.wReplace"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        WindowStartupLocation="CenterOwner"
+        Title="Replace" Height="183" Width="415">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320*" />
+            <ColumnDefinition Width="91*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="133"/>
+            <RowDefinition Height="23*" />
+        </Grid.RowDefinitions>
+        <Label Content="Find what:" Height="28" HorizontalAlignment="Left" Margin="7,4,0,0" Name="label1" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="7,28,0,0" Name="tbFind" VerticalAlignment="Top" Width="246" KeyDown="tbFind_KeyDown" />
+        <Button Content="Find Next" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="7,13,0,0" Name="cbFindNext" VerticalAlignment="Top" Width="75" Click="cbFindNext_Click" />
+        <Button Content="Chancel" Grid.Column="1" Height="23" HorizontalAlignment="Left" Margin="7,41,0,0" Name="cbChancel" VerticalAlignment="Top" Width="75" Click="cbChancel_Click" />
+        <CheckBox Content="Match case" Height="16" HorizontalAlignment="Left" Margin="12,112,0,0" Name="cbMatchCase" VerticalAlignment="Top" />
+        <CheckBox Click="cbFindUp_Click" Content="Find up" Height="16" HorizontalAlignment="Left" Margin="236,112,0,0" Name="cbFindUp" VerticalAlignment="Top" />
+        <CheckBox Content="Match whole word" Height="16" HorizontalAlignment="Left" Margin="105,112,0,0" Name="cbMatchWholeWord" VerticalAlignment="Top" />
+        <Label Content="Replace with:" Height="28" HorizontalAlignment="Left" Margin="7,56,0,0" Name="label2" VerticalAlignment="Top" />
+        <TextBox Height="23" HorizontalAlignment="Left" Margin="7,83,0,0" Name="textBox1" VerticalAlignment="Top" Width="246" />
+    </Grid>
+</Window>

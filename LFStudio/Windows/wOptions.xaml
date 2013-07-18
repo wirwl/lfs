@@ -1,0 +1,10 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="wOptions" Height="409" Width="626">
+    <Grid x:Uid="Grid_1">
+        <Label x:Uid="label1" Content="Show menu" Height="28" HorizontalAlignment="Left" Margin="12,168,0,0" Name="label1" VerticalAlignment="Top" Width="242"  />
+        <CheckBox x:Uid="checkBox1" Content="Show menu" Height="21" HorizontalAlignment="Left" Margin="12,12,0,0" Name="checkBox1" VerticalAlignment="Top" Width="192" />
+        <CheckBox x:Uid="cb" Content="Save all opened files before run game" Height="21" HorizontalAlignment="Left" Margin="12,44,0,0" Name="cb" VerticalAlignment="Top" Width="370" />
+    </Grid>
+</Window>

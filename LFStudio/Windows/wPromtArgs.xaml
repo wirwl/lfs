@@ -1,0 +1,15 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.Windows.wPromtArgs"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        Background="{DynamicResource winbkgcolor}"
+        WindowStartupLocation="CenterOwner"
+        loc:Translate.Uid="wtPA"
+        Title="{loc:Translate Promt arguments}" Height="110" Width="378" Closed="Window_Closed" WindowStyle="ToolWindow">
+    <Grid x:Uid="Grid_1">
+        <TextBox x:Uid="tbArgs" Height="23" HorizontalAlignment="Left" Margin="74,9,0,0" Name="tbArgs" VerticalAlignment="Top" Width="270" />
+        <Label x:Uid="label1" loc:Translate.Uid="lArgs" Content="{loc:Translate Arguments}" Height="28" HorizontalAlignment="Left" Margin="2,7,0,0" Name="label1" VerticalAlignment="Top" />
+        <Button x:Uid="bRun" loc:Translate.Uid="bRun" Content="{loc:Translate Run}" Height="23" HorizontalAlignment="Left" Margin="188,40,0,0" Name="bRun" VerticalAlignment="Top" Width="75" Click="bRun_Click" />
+        <Button x:Uid="bChancel" loc:Translate.Uid="bChancel2" Content="{loc:Translate Chancel}" Height="23" HorizontalAlignment="Left" Margin="269,40,0,0" Name="bChancel" VerticalAlignment="Top" Width="75" Click="bChancel_Click" />
+    </Grid>
+</Window>

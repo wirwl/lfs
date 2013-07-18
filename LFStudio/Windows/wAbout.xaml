@@ -1,0 +1,17 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wnd.wAbout"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        BorderThickness="0"        
+        ResizeMode="NoResize"
+        Background="{DynamicResource winbkgcolor}"
+        loc:Translate.Uid="wtAbout"
+        Title="{loc:Translate About}" Height="181" Width="327" WindowStartupLocation="CenterOwner">
+    <Grid x:Uid="Grid_1">
+        <Label x:Uid="label1" Content="Product name: LitteFighter Studio" Height="26" HorizontalAlignment="Left" Margin="12,12,0,0" Name="label1" VerticalAlignment="Top" Width="281" />
+        <Label x:Uid="label2" Content="Version: " Height="28" HorizontalAlignment="Left" Margin="12,36,0,0" Name="label2" VerticalAlignment="Top" />
+        <Label x:Uid="label3" Content="Copyright © 2011-2013 Wirwl" Height="28" HorizontalAlignment="Left" Margin="14,112,0,0" Name="label3" VerticalAlignment="Top" />
+        <Label x:Uid="label4" Content="Special thanks: Nold, Shad90, Azriel" Height="28" HorizontalAlignment="Left" Margin="12,61,0,0" Name="label4" VerticalAlignment="Top" Width="251" />
+        <Label x:Uid="label5" Content="Beta testers: Surik, Edl" Height="28" HorizontalAlignment="Left" Margin="12,86,0,0" Name="label5" VerticalAlignment="Top" />
+    </Grid>
+</Window>

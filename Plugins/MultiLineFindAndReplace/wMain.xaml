@@ -1,0 +1,69 @@
+﻿<Window x:Class="MultiLineFindAndReplace.wMain"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="{DynamicResource winbkgcolor}"       
+        WindowStartupLocation="CenterOwner"
+        Title="Multiline Find and Replace (Build 103)" MinHeight="415" MinWidth="618" Height="415" Width="618" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="30" />
+        </Grid.RowDefinitions>
+        <TabControl Margin="10,10,12,5" Name="tcFindAndReplace" Background="{DynamicResource winbkgcolor}" Grid.Row="0">
+                <TabItem Header="Find">
+                    <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="87" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="What:" Height="28" HorizontalAlignment="Left" Margin="0,4,0,0" Name="label1" VerticalAlignment="Top" Grid.Column="0" />
+                        <Button Click="cbFindNext_Click" Content="Find Next" Height="23" HorizontalAlignment="Center" Margin="0,27,0,0" Name="cbFindNext" VerticalAlignment="Top" Width="75" Grid.Column="1" />
+                        <Button Click="cbChancel_Click" Content="Chancel" Height="23" HorizontalAlignment="Center" Margin="0,53,0,0" Name="cbChancel" VerticalAlignment="Top" Width="75" Grid.Column="1" />
+                    <avalonedit:TextEditor Grid.Column="0" WordWrap="False"  MinHeight="156" MinWidth="472" Margin="7,28,0,0" Name="teFind" Foreground="Black" BorderBrush="Black" BorderThickness="0"></avalonedit:TextEditor>
+                        <GroupBox Visibility="Hidden" Header="Where search" Height="123" HorizontalAlignment="Left" Margin="8,26,0,0" Name="groupBox1" VerticalAlignment="Top" Width="160" Grid.Column="1">
+                            <Grid>
+                                <RadioButton Content="Current document" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="6,6,0,0" Name="rbCurDoc" VerticalAlignment="Top" />
+                                <RadioButton Content="All open documents" Height="16" HorizontalAlignment="Left" Margin="6,28,0,0" Name="rbAllDoc" VerticalAlignment="Top" />
+                                <RadioButton Content="Project" Height="16" HorizontalAlignment="Left" Margin="6,50,0,0" Name="rbProject" VerticalAlignment="Top" />
+                                <ComboBox Height="23" HorizontalAlignment="Left" IsEditable="False" IsEnabled="False" Margin="8,71,0,0" Name="cbProjects" VerticalAlignment="Top" Width="120" />
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Replace">
+                    <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="70*" />
+                        <RowDefinition Height="70*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="87" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Find what:" Height="28" HorizontalAlignment="Left" Margin="0,4,0,0" Name="label1r" VerticalAlignment="Top" Grid.Row="0" />
+                    <avalonedit:TextEditor MinHeight="66" Margin="7,28,0,0" Name="teFindForReplace" MinWidth="472" Grid.Row="0" />
+
+                        <Button Content="Find Next" Height="23" HorizontalAlignment="Center" Margin="0,27,0,0" Name="bFindForReplace" VerticalAlignment="Top" Width="75" Click="bFindForReplace_Click" Grid.Column="1" />
+
+                        <Button Click="bFindNextr_Click" Content="Replace" Height="23" HorizontalAlignment="Center" Margin="0,53,0,0" Name="bFindNextr" VerticalAlignment="Top" Width="75" Grid.Column="1" />
+                        <Button Click="cbChancel_Click" Content="Chancel" Height="23" HorizontalAlignment="Center" Margin="0,105,0,12" Name="cbChancelr" VerticalAlignment="Top"  Width="75" Grid.Column="1" />
+                        <Label Content="Replace with:" Height="28" HorizontalAlignment="Left" Margin="0,4,0,0" VerticalAlignment="Top" Name="label2" Grid.Row="1"/>
+                        <avalonedit:TextEditor   MinHeight="66"  Margin="7,28,0,0" Name="teNewText"  MinWidth="472" Grid.Row="1" />
+
+                        <GroupBox Visibility="Hidden" Header="Where search" Height="123" HorizontalAlignment="Left" Margin="4,26,0,0" Name="groupBox2" VerticalAlignment="Top" Width="160" Grid.Column="1" Grid.RowSpan="2">
+                            <Grid>
+                                <RadioButton Content="Current document" Height="16" HorizontalAlignment="Left" IsChecked="True" Margin="6,6,0,0" Name="radioButton4" VerticalAlignment="Top" />
+                                <RadioButton Content="All open documents" Height="16" HorizontalAlignment="Left" Margin="6,28,0,0" Name="radioButton5" VerticalAlignment="Top" />
+                                <RadioButton Content="Project" Height="16" HorizontalAlignment="Left" Margin="6,50,0,0" Name="radioButton6" VerticalAlignment="Top" />
+                                <ComboBox Height="23" HorizontalAlignment="Left" IsEditable="False" IsEnabled="False" Margin="8,71,0,0" Name="comboBox2" VerticalAlignment="Top" Width="120" />
+                            </Grid>
+                        </GroupBox>
+                        <Button Click="bReplaceAll_Click" x:Name="bReplaceAll" Content="Replace all" Height="23" HorizontalAlignment="Center" Margin="0,79,0,0" VerticalAlignment="Top" Width="75" Grid.Column="1" />
+                    </Grid>
+                </TabItem>
+            </TabControl>        
+        <CheckBox Content="Match case" Height="16" HorizontalAlignment="Left" Margin="28,0,0,0" Name="cbMatchCase" VerticalAlignment="Top" Grid.Row="1" />
+        <CheckBox Content="Find up" Height="16" HorizontalAlignment="Left" Margin="298,0,0,0" Name="cbFindUp" VerticalAlignment="Top" Click="cbFindUp_Click" Grid.Row="1" />
+        <CheckBox Content="Discard spaces" Height="16" HorizontalAlignment="Left" Margin="163,0,0,0" Name="cbDiscardspaces" VerticalAlignment="Top" Grid.Row="1" />
+    </Grid>
+</Window>

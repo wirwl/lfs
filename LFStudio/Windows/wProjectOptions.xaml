@@ -1,0 +1,22 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wProjectOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        ResizeMode="NoResize"
+        Background="{DynamicResource winbkgcolor}"
+        WindowStartupLocation="CenterOwner"
+        loc:Translate.Uid="wtPO"
+        Title="{loc:Translate Project options}" Height="246" Width="537" WindowStyle="ToolWindow">
+    <Grid x:Uid="Grid_1" >
+        <Label x:Uid="lPathToExe" loc:Translate.Uid="lPGE" Content="{loc:Translate Path to game executeable}" Height="28" HorizontalAlignment="Left" Margin="12,17,0,0" Name="lPathToExe" VerticalAlignment="Top" />
+        <TextBox x:Uid="tbPathExe" Height="23" HorizontalAlignment="Left" Margin="12,38,0,0" Name="tbPathExe" VerticalAlignment="Top" Width="400" />
+        <Label x:Uid="lPass" loc:Translate.Uid="lSW" Content="{loc:Translate Secret word for (de)crypting dat files (Please dont edit if you dont know what is it)}" Height="28" HorizontalAlignment="Left" Margin="10,109,0,0" Name="lPass" VerticalAlignment="Top" />
+        <TextBox x:Uid="tbPass" Height="23" HorizontalAlignment="Left" Margin="12,130,0,0" Name="tbPass" VerticalAlignment="Top" Width="400" />
+        <Button x:Uid="bBrowse" loc:Translate.Uid="bBr" Content="{loc:Translate Browse...}" Height="23" HorizontalAlignment="Left" Margin="416,37,0,0" Name="bBrowse" VerticalAlignment="Top" Width="75" Click="bBrowse_Click" />
+        <Button x:Uid="bSave" loc:Translate.Uid="bSave" Content="{loc:Translate Save}" Height="23" HorizontalAlignment="Left" Margin="337,170,0,0" Name="bSave" VerticalAlignment="Top" Width="75" Click="bSave_Click" />
+        <Button x:Uid="bChancel" loc:Translate.Uid="bCha" Content="{loc:Translate Chancel}" Height="23" HorizontalAlignment="Left" Margin="416,170,0,0" Name="bChancel" VerticalAlignment="Top" Width="75" Click="bChancel_Click" />
+        <TextBox x:Uid="tbGameFolder" IsReadOnly="True" Height="23" HorizontalAlignment="Left" Margin="10,80,0,0" Name="tbGameFolder" VerticalAlignment="Top" Width="400" />
+        <Label x:Uid="label1" loc:Translate.Uid="lPGF" Content="{loc:Translate Path to game folder}" Height="28" HorizontalAlignment="Left" Margin="10,59,0,0" Name="label1" VerticalAlignment="Top" />
+        <CheckBox x:Uid="cbAutorun" loc:Translate.Uid="lPGS" Content="{loc:Translate Press \'game start\' after application run}" Height="16" HorizontalAlignment="Left" Margin="12,170,0,0" Name="cbAutorun" VerticalAlignment="Top" />
+    </Grid>
+</Window>

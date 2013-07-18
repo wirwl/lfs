@@ -1,0 +1,16 @@
+﻿<Application x:Uid="Application_1" x:Class="LFStudio.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"           
+             Startup="Application_Startup"                          
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>               
+        <ResourceDictionary x:Uid="rd1">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary x:Uid="rd2" Source="pack://application:,,,/AvalonDock;component/Resources/DefaultStyles.xaml"/>                
+                <ResourceDictionary>
+                    <SolidColorBrush x:Key="winbkgcolor" Color="#E9ECFA" />
+                </ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

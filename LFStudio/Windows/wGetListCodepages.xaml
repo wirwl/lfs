@@ -1,0 +1,13 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wGetListCodepages"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterOwner"
+        loc:Translate.Uid="wtList"
+        Title="{loc:Translate List}" Height="175" Width="407" xmlns:avalonedit="http://icsharpcode.net/sharpdevelop/avalonedit">
+    
+    <Grid x:Uid="Grid_1">
+        <avalonedit:TextEditor x:Uid="teCodePagesList" Name="teCodePagesList"  />
+    </Grid>
+</Window>

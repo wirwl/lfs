@@ -1,0 +1,33 @@
+﻿<Window x:Class="LFStudio.Controls.MessageBoxQuestion"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        MinWidth="400" MaxWidth="400" 
+        ResizeMode="NoResize" SizeToContent="WidthAndHeight" 
+        ShowInTaskbar="False"
+        x:Name="wQuestion"
+        WindowStartupLocation="CenterOwner"
+        Title="MessageBox" >
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55" />
+                <RowDefinition Height="2" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="40" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image  Source="/Img\Question48.png" HorizontalAlignment="Left" VerticalAlignment="Center" Height="48" Width="48" Margin="10 0 0 0"/>                         
+            <TextBlock x:Name="tbQuestion"  Grid.RowSpan="2" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Left" 
+            HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10 10 10 10" />
+          
+            <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" 
+                    HorizontalAlignment="Right" Margin="0 0 5 0">                
+                <Button x:Name="bYes" Content="Yes" Margin="5 5 5 5" Height="24" Width="80" Click="bYes_Click" IsDefault="True" />
+                <Button x:Name="bNo" Content="No"  Margin="5 5 5 5" Height="24" Width="80" Click="bNo_Click" />
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

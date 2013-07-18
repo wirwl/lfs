@@ -1,0 +1,479 @@
+﻿<Window x:Uid="wMainWindow" 
+        xmlns:ad="clr-namespace:AvalonDock;assembly=AvalonDock"  
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"        
+        xmlns:te="clr-namespace:ICSharpCode.AvalonEdit;assembly=ICSharpCode.AvalonEdit"
+        x:Class="LFStudio.MainWindow"
+        xmlns:my="clr-namespace:LFStudio"
+        xmlns:dc="clr-namespace:LFStudio.Controls"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"                        
+        xmlns:m="clr-namespace:Wpf.Controls;assembly=Wpf.SplitButton"
+        xmlns:local="clr-namespace:Borgstrup.EditableTextBlock"                
+        xmlns:FR="clr-namespace:FindReplace;assembly=FindReplace"        
+        xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan" 
+        Title="LittleFighter Studio"
+        x:Name="wMainWindow"                     
+        Closing="Window_Closing"
+        Closed="wMainWindow_Closed"
+        KeyDown="wMainWindow_KeyDown"        
+        Width="1280"                                      
+        Height="768"
+        UseLayoutRounding="True"
+        SnapsToDevicePixels="True"
+        TextOptions.TextFormattingMode="Ideal"              
+        >
+
+    <!--  Style="{DynamicResource winColor}" -->
+    <!--  <Window.InputBindings>
+        <KeyBinding Key="F3" Modifiers="Shift" Command="Search" CommandParameter="something" />
+    </Window.InputBindings>-->
+    <Grid x:Uid="MainGrid" x:Name="MainGrid" KeyDown="MainGrid_KeyDown">
+        <Grid.RowDefinitions>
+            <RowDefinition x:Uid="RowDefinition_1" Height="24"/>
+            <RowDefinition x:Uid="RowDefinition_2" Height="27"/>
+            <RowDefinition x:Uid="RowDefinition_3" Height="*"/>
+            <RowDefinition x:Uid="RowDefinition_4" Height="0"/>
+            <!--24-->
+        </Grid.RowDefinitions>
+        <StatusBar x:Uid="statusbar" x:Name="statusbar" Grid.Row="3" Visibility="Hidden">
+            <TextBlock x:Uid="TextBlock_1"></TextBlock>
+        </StatusBar>
+        <Menu x:Uid="MainMenu" x:Name="MainMenu" >
+            <!--        <Menu.Style>
+                <Style TargetType="Menu">
+                    <Setter Property="Background" Value="Red"/>
+                </Style>
+            </Menu.Style> -->
+            <MenuItem x:Uid="MenuItem_1" loc:Translate.Uid="0" x:Name="miFile"  Header="{loc:Translate File}" >
+                <MenuItem x:Uid="ndf" x:Name="ndf" loc:Translate.Uid="1" Header="{loc:Translate New file}" Click="ndf_Click" InputGestureText="Ctrl + Q"/>
+                <MenuItem x:Uid="MenuItem_2" loc:Translate.Uid="2" Visibility="Visible" Header="{loc:Translate Open file}" IsEnabled="True"  Click="of_Click" InputGestureText="Ctrl + O" />
+                <Separator x:Uid="Separator_1"/>
+                <MenuItem   x:Uid="sf" x:Name="sf" loc:Translate.Uid="3" Header="{loc:Translate Save [file]}" Click="sf_Click" InputGestureText="Ctrl + S" />
+                <MenuItem x:Uid="sall" x:Name="sall" loc:Translate.Uid="4" Header="{loc:Translate Save all}" Click="sall_Click" InputGestureText="Ctrl + L" />
+                <Separator x:Uid="Separator_2"/>
+                <MenuItem x:Uid="cf" x:Name="cf" loc:Translate.Uid="5" Header="{loc:Translate Close [file]}" Click="cf_Click" InputGestureText="Ctrl + W" />
+                <MenuItem  x:Uid="caf" OverridesDefaultStyle="True" x:Name="caf" loc:Translate.Uid="6" Header="{loc:Translate Close all files}" Click="caf_Click" InputGestureText="Ctrl + R"/>
+                <Separator x:Uid="Separator_3"/>
+                <MenuItem x:Uid="miRecent" x:Name="miRecent" loc:Translate.Uid="7" Header="{loc:Translate Recent files}"/>
+                <MenuItem x:Uid="MenuItem_3" loc:Translate.Uid="8" Header="{loc:Translate Exit}" Click="Exit_Click" InputGestureText="Alt + F4" />
+            </MenuItem>
+            <MenuItem x:Uid="edit" x:Name="edit" loc:Translate.Uid="9" Header="{loc:Translate Edit}" SubmenuOpened="edit_SubmenuOpened">
+                <MenuItem x:Uid="Undo" x:Name="Undo" loc:Translate.Uid="10" Header="{loc:Translate Undo}" Click="undo_Click" />
+                <MenuItem x:Uid="Redo" x:Name="Redo" loc:Translate.Uid="11" Header="{loc:Translate Redo}" Click="Redo_Click"/>
+                <MenuItem x:Uid="Cut" x:Name="Cut" loc:Translate.Uid="12" Header="{loc:Translate Cut}" Click="Cut_Click"/>
+                <MenuItem x:Uid="Copy" x:Name="Copy" loc:Translate.Uid="13" Header="{loc:Translate Copy}" Click="Copy_Click"/>
+                <MenuItem x:Uid="Paste" x:Name="Paste" loc:Translate.Uid="14" Header="{loc:Translate Paste}" Click="Paste_Click"/>
+                <MenuItem x:Uid="Delete" x:Name="Delete" loc:Translate.Uid="15" Header="{loc:Translate Delete}" Click="Delete_Click" />
+                <MenuItem x:Uid="selectall" x:Name="selectall" loc:Translate.Uid="16" Header="{loc:Translate Select all}" Click="selectall_Click"/>
+                <Separator x:Uid="Separator_4"/>
+                <MenuItem x:Uid="MenuItem_4" loc:Translate.Uid="17" Header="{loc:Translate Advanced}">
+                    <MenuItem x:Uid="delemptyline" x:Name="delemptyline" loc:Translate.Uid="18" Header="{loc:Translate Delete empty lines in [file]}" Click="delemptyline_Click"/>
+                    <MenuItem x:Uid="delspaces" x:Name="delspaces" loc:Translate.Uid="19" Header="{loc:Translate Delete spaces in right side of sentence [file]}" Click="delspaces_Click"/>
+                </MenuItem>
+
+            </MenuItem>
+            <MenuItem x:Uid="prj" x:Name="prj" loc:Translate.Uid="20" Header="{loc:Translate Project}" SubmenuOpened="prj_SubmenuOpened"  >
+                <MenuItem x:Uid="aep" x:Name="aep" loc:Translate.Uid="21" Header="{loc:Translate Add existing project}" Click="aep_Click" />
+                <MenuItem x:Uid="np" x:Name="np" loc:Translate.Uid="22" Header="{loc:Translate Create new project}" Click="np_Click"/>
+                <MenuItem x:Uid="pp" x:Name="pp" loc:Translate.Uid="23" Header="{loc:Translate Project properties}" Click="pp_Click" />
+            </MenuItem>
+            <MenuItem x:Uid="View" x:Name="View" loc:Translate.Uid="24" Header="{loc:Translate View}">
+                <MenuItem x:Uid="MenuItem_5" loc:Translate.Uid="25" Header="{loc:Translate Fold/Unfold}">
+                    <MenuItem x:Uid="foldall" x:Name="foldall" loc:Translate.Uid="26" Header="{loc:Translate Fold All}" Click="foldall_Click"/>
+                    <MenuItem x:Uid="unfoldall" x:Name="unfoldall" loc:Translate.Uid="27" Header="{loc:Translate Unfold All}" Click="unfoldall_Click"/>
+                    <Separator x:Uid="Separator_5"/>
+                    <MenuItem x:Uid="fold1" x:Name="fold1" loc:Translate.Uid="28" Header="{loc:Translate Fold all 1st level segments}" Click="fold1_Click"/>
+                    <MenuItem x:Uid="unfold1" x:Name="unfold1" loc:Translate.Uid="29" Header="{loc:Translate Unfold all 1st level segments}" Click="unfold1_Click"/>
+                    <Separator x:Uid="Separator_6"/>
+                    <MenuItem x:Uid="fold2" x:Name="fold2" loc:Translate.Uid="30" Header="{loc:Translate Fold all 2nd level segments}" Click="fold2_Click"/>
+                    <MenuItem x:Uid="unfold2" x:Name="unfold2" loc:Translate.Uid="31" Header="{loc:Translate Unfold all 2nd level segments}" Click="unfold2_Click"/>
+                </MenuItem>
+                <MenuItem x:Uid="gotoline" x:Name="gotoline" loc:Translate.Uid="32" Header="{loc:Translate Go to line number}" Click="gotoline_Click" InputGestureText="Ctrl + G"/>
+
+                <MenuItem x:Uid="miRunGame" x:Name="miRunGame" loc:Translate.Uid="33" Header="{loc:Translate Run game}" Click="sbRunGame_Click" InputGestureText="F5"/>
+                <MenuItem x:Uid="miUtilities" x:Name="miUtilities" loc:Translate.Uid="34" Header="{loc:Translate Utilities}">
+                    <MenuItem x:Uid="miGetList" x:Name="miGetList" loc:Translate.Uid="35" Header="{loc:Translate Get list of codepages}" Click="miGetList_Click"/>
+                    <MenuItem x:Uid="miGetListofFonts" x:Name="miGetListofFonts" loc:Translate.Uid="36" Header="{loc:Translate Get list of fonts}" Click="miGetListofFonts_Click"/>
+                </MenuItem>
+                <MenuItem x:Uid="miShowWebBrowser" Visibility="Collapsed" x:Name="miShowWebBrowser" loc:Translate.Uid="37" Header="{loc:Translate Show Web Browser}" Click="miShowWebBrowser_Click"></MenuItem>
+                <MenuItem x:Uid="MenuItem_6" loc:Translate.Uid="38" Header="{loc:Translate Themes}">
+                    <MenuItem x:Uid="miStandard" x:Name="miStandard" loc:Translate.Uid="39" Header="{loc:Translate Standard}">
+                        <MenuItem x:Uid="MenuItem_7" loc:Translate.Uid="40" Header="{loc:Translate Default Theme and Color}" Tag="aero.normalcolor" Click="ChangeStandardTheme"/>
+                        <MenuItem x:Uid="MenuItem_8" loc:Translate.Uid="41" Header="{loc:Translate Change color}">
+                            <ComboBox x:Uid="lsbBrushes" Name="lsbBrushes" ItemsSource="{Binding}" SelectionChanged="ChangeColor">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate x:Uid="DataTemplate_1">
+                                        <Grid x:Uid="Grid_1">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition x:Uid="ColumnDefinition_1" />
+                                                <ColumnDefinition x:Uid="ColumnDefinition_2" Width="130"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Rectangle x:Uid="Rectangle_1" Fill="{Binding Path=Hex}" Stroke="Black" Margin="5" StrokeThickness="1" Height="15" Width="70"/>
+                                            <DockPanel x:Uid="DockPanel_1" Grid.Column="1">
+                                                <Label x:Uid="Label_1" Foreground="Black" Content="{Binding Path=Name}" />
+                                                <!--   <Label Content="{Binding Path=Hex}" /> -->
+                                            </DockPanel>
+                                        </Grid>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem x:Uid="miAdvanced" x:Name="miAdvanced" loc:Translate.Uid="42" Header="{loc:Translate Custom}"/>
+                </MenuItem>
+                <MenuItem x:Name="miLang" loc:Translate.Uid="43" Header="{loc:Translate Language}">
+                    <MenuItem x:Name="miAuto" loc:Translate.Uid="99" Header="{loc:Translate Auto detect}" Click="miAuto_Click"/>
+                    <Separator/>
+                    <!--
+                    <MenuItem x:Name="miRus" loc:Translate.Uid="44" Header="{loc:Translate Russian}" Click="miSelectLang_Click"/>
+                    <MenuItem x:Name="miEng" loc:Translate.Uid="45" Header="{loc:Translate English}" Click="miEng_Click"/> 
+                    -->
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Uid="miTools" x:Name="miTools" loc:Translate.Uid="46" Header="{loc:Translate Tools}">
+            </MenuItem>
+            <MenuItem x:Uid="miPlugins" x:Name="miPlugins" loc:Translate.Uid="47" Header="{loc:Translate Plugins}" Visibility="Visible" />
+            <MenuItem x:Uid="miWindow" x:Name="miWindow" loc:Translate.Uid="48" Header="{loc:Translate Window}">
+                <MenuItem x:Uid="miPE" x:Name="miPE" loc:Translate.Uid="49" Header="{loc:Translate Show/Hide Projects Explorer}" Click="miPE_Click" InputGestureText="Ctrl+P" />
+                <MenuItem x:Uid="miErrors" x:Name="miErrors" loc:Translate.Uid="50" Header="{loc:Translate Show/Hide Errors window}" Click="miErrors_Click" />
+                <MenuItem x:Uid="miDebug" x:Name="miDebug" loc:Translate.Uid="51" Header="{loc:Translate Show/Hide Output window}" Click="miDebug_Click" />
+                <MenuItem x:Name="miSGV" loc:Translate.Uid="miSGV" Header="{loc:Translate Show/Hide SGV window}" Click="miSGV_Click" />
+                <MenuItem x:Name="miAP" loc:Translate.Uid="miAP" Header="{loc:Translate Show/Hide Audio player window}" Click="miAP_Click" />
+                <MenuItem x:Name="miWD" loc:Translate.Uid="miWD" Header="{loc:Translate Show/Hide Weapons and drinks viewer window}" Click="miWD_Click" />
+            </MenuItem>
+            <MenuItem x:Uid="miHelp" x:Name="miHelp" loc:Translate.Uid="52" Header="{loc:Translate Help}">
+                <MenuItem x:Uid="miHotkeys" x:Name="miHotkeys" loc:Translate.Uid="53" Header="{loc:Translate Hotkeys}" Click="miHotkeys_Click"/>
+                <MenuItem x:Uid="miAbout" x:Name="miAbout" loc:Translate.Uid="54" Header="{loc:Translate About}" Click="miAbout_Click"/>
+            </MenuItem>                                    
+        </Menu>
+        <ToolBar x:Uid="tbMain" x:Name="tbMain"  Grid.Row="1">
+            <!--Background="#E9ECFA"-->
+            <ToolBar.Resources>
+                <Style x:Uid="Style_1" TargetType="{x:Type Image}">
+                    <Style.Triggers>
+                        <DataTrigger x:Uid="DataTrigger_1" Binding="{Binding RelativeSource={RelativeSource AncestorType={x:Type ButtonBase}, AncestorLevel=1}, Path=IsEnabled}" Value="False">
+                            <Setter x:Uid="Setter_1" Property="Opacity" Value="0.3" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ToolBar.Resources>
+            <!--<Button>            <Image Source="img\k.png" />            </Button>-->
+            <Button x:Uid="Button_1" Click="ndf_Click">
+                <Image x:Uid="Image_1" Source="img\icons\NewDocumentHS.png"/>
+            </Button>
+            <Button x:Uid="Button_2" Click="of_Click"  >
+                <Image x:Uid="Image_2" Source="img\icons\openHS.png"  />
+            </Button>
+            <Button x:Uid="Button_3" Click="sf_Click">
+                <Image x:Uid="Image_3" Source="img\icons\saveHS.png"  />
+            </Button>
+            <Button x:Uid="Button_4" Click="sall_Click">
+                <Image x:Uid="Image_4" Source="img\icons\saveAllHS.png" />
+            </Button>
+            <Separator x:Uid="Separator_7"/>
+            <Button x:Uid="Button_5" Command="Cut">
+                <Image x:Uid="Image_5" Source="img\icons\CutHS.png"  />
+            </Button>
+            <Button x:Uid="Button_6" Command="Copy">
+                <Image x:Uid="Image_6" Source="img\icons\CopyHS.png"  />
+            </Button>
+            <Button x:Uid="Button_7" Command="Paste">
+                <Image x:Uid="Image_7" Source="img\icons\PasteHS.png"  />
+            </Button>
+            <Button x:Uid="Button_8" Command="Delete">
+                <Image x:Uid="Image_8" Source="img\icons\DeleteHS.png"  />
+            </Button>
+            <Separator x:Uid="Separator_8"/>
+            <Button x:Uid="Button_9" Command="Undo">
+                <Image x:Uid="Image_9" Source="img\icons\Edit_UndoHS.png"  />
+            </Button>
+            <Button x:Uid="Button_10" Command="Redo">
+                <Image x:Uid="Image_10" Source="img\icons\Edit_RedoHS.png"  />
+            </Button>
+          
+                <m:SplitButton x:Uid="sbRunGame"  x:Name="sbRunGame" Click="sbRunGame_Click" >
+                <m:SplitButton.Content>
+                    <StackPanel x:Uid="StackPanel_1" Orientation="Horizontal">
+                        <Image x:Uid="Image_11" Source="img\icons\FormRunHS.png"  />
+                        <TextBlock x:Name="tbsb" x:Uid="TextBlock_2" loc:Translate.Uid="tbRG" Text="{loc:Translate Run game}" Margin="0,-2,0,0" Padding="2,0,1,0" />
+                    </StackPanel>
+                </m:SplitButton.Content>
+            </m:SplitButton>
+
+            <Separator x:Uid="Separator_9"/>
+            <Button x:Uid="bFind" x:Name="bFind" Click="bFind_Click">
+                <Image x:Uid="Image_12" Source="img\icons\FindHS.png"  />
+            </Button>
+            <Button x:Uid="bFindNext" x:Name="bFindNext" Click="bFindNext_Click">
+                <Image x:Uid="Image_13" Source="img\icons\FindNextHS.png"  />
+            </Button>
+            <Separator x:Uid="Separator_10"/>
+            <ComboBox x:Name="cbTemplate" Visibility="Hidden"/>
+            <!--
+            <Button>
+                <Image Source="img\firen_f.png" Width="120" Height="120" />
+            </Button>
+-->
+            <!--     <Button Click="bGotoframename_Click" x:Name="bGotoframename">Goto frame:</Button>
+            <ComboBox x:Name="cbGotoframename" Width="120" SelectionChanged="cbGotoframename_SelectionChanged" IsEnabled="True"></ComboBox>
+            <Button Click="bGotoframenumber_Click" x:Name="bGotoframenumber">Goto frame number:</Button>
+            <ComboBox x:Name="cbGotoframenumber" Width="120" IsEditable="True" SelectionChanged="cbGotoframenumber_SelectionChanged"></ComboBox>            
+            -->
+
+        </ToolBar>
+        <ad:DockingManager  x:Uid="DockManager" x:Name="DockManager" Grid.Row="2" Loaded="DockManager_Loaded"   
+                            ActiveDocumentChanged="DockManager_ActiveDocumentChanged"
+                             KeyDown="DockManager_KeyDown" >
+            <ad:ResizingPanel  x:Uid="rp" x:Name="rp"  Orientation="Vertical">
+                <ad:ResizingPanel x:Uid="rpDocAndPE" x:Name="rpDocAndPE">
+                    <ad:DocumentPane x:Uid="dmpDocs" x:Name="dmpDocs">
+                    </ad:DocumentPane>
+                    <ad:DockablePane x:Uid="dapExplorer" x:Name="dapExplorer">
+                        <ad:DockableContent x:Uid="dcPE" x:Name="dcPE" loc:Translate.Uid="dcPE" Title="{loc:Translate Projects explorer}" DockableStyle="DockableButNotAutoHidden" >
+                            <TreeView   x:Uid="tvExplorer" x:Name="tvExplorer" MouseRightButtonDown="myHandler" AllowDrop="True" MouseDown="tvExplorer_MouseDown" MouseMove="tvExplorer_MouseMove" DragOver="tvExplorer_DragOver" Drop="tvExplorer_Drop" KeyDown="tvExplorer_KeyDown_1"/>                                                          
+                        </ad:DockableContent>
+                    </ad:DockablePane>
+                </ad:ResizingPanel>
+                <ad:DockablePane x:Uid="dpBottom" x:Name="dpBottom" ad:ResizingPanel.ResizeHeight="160" >
+                    <ad:DockableContent x:Uid="dcErrors" loc:Translate.Uid="dcErr" Title="{loc:Translate Errors}" x:Name="dcErrors" KeyDown="dcErrors_KeyDown">
+                        <DataGrid x:Uid="gErrors" x:Name="dgErrors" IsReadOnly="True" AutoGenerateColumns="True"  MouseDoubleClick="gErrors_MouseDoubleClick" ></DataGrid>
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Uid="dcOutput" loc:Translate.Uid="dcDO" Title="{loc:Translate Debug output}" x:Name="dcOutput">
+                        <te:TextEditor  x:Uid="teOutput" x:Name="teOutput" IsReadOnly="True" ShowLineNumbers="True" KeyDown="teOutput_KeyDown"/>
+                    </ad:DockableContent>
+                    <ad:DockableContent loc:Translate.Uid="dcSGV" Title="{loc:Translate Static graphic viewer}" x:Name="dcSGV" Loaded="dcSGV_Loaded" KeyDown="dcSGV_KeyDown" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ToolBar Grid.Row="0" SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.EdgeMode="Aliased">
+                                <Button x:Name="bSettings" MouseMove="bSettings_MouseMove" Click="bSettings_Click">
+                                    <Image x:Uid="Image_13" Source="img\SGV\refresh.png" Width="23" Height="16"  />
+                                </Button>
+                                <Separator/>
+                                <RadioButton GroupName="mouse"  Content="Bdy" x:Name="rbBdy" Click="rbBdy_Click" MouseMove="rbBdy_MouseMove"/>
+                                <RadioButton GroupName="mouse" Content="Itr" x:Name="rbItr" Click="rbItr_Click" MouseMove="rbItr_MouseMove"/>
+                                <RadioButton GroupName="mouse"  Content="B" x:Name="rbBpoint" Click="rbBpoint_Click" MouseMove="rbBpoint_MouseMove"/>
+                                <RadioButton GroupName="mouse"  Content="W" x:Name="rbWpoint" Click="rbWpoint_Click" MouseMove="rbWpoint_MouseMove"/>
+                                <RadioButton GroupName="mouse"  Content="C" x:Name="rbCpoint" Click="rbCpoint_Click" MouseMove="rbCpoint_MouseMove"/>
+                                <RadioButton GroupName="mouse"  Content="O" x:Name="rbOpoint" Click="rbOpoint_Click" MouseMove="rbOpoint_MouseMove" />
+                                <RadioButton GroupName="mouse"  Content="cxy" x:Name="rbCenter" Click="rbCenter_Click" MouseMove="rbCenter_MouseMove" />
+                                <Separator/>
+                                <Button x:Name="bIncCanvasSize" Click="bIncCanvasSize_Click" MouseMove="bIncCanvasSize_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\plus.png"  />
+                                </Button>
+                                <Button x:Name="bDecCanvasSize" Click="bDecCanvasSize_Click" MouseMove="bDecCanvasSize_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\minus.png"  />
+                                </Button>
+                                <Separator/>
+                                <RadioButton GroupName="focus" x:Name="bNoFocus"  Click="bNoFocus_Click" MouseMove="bNoFocus_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\nf.png"  />
+                                </RadioButton>
+                                <RadioButton GroupName="focus" x:Name="bFocusToFrame" IsChecked="True"  Click="bFocusToFrame_Click" MouseMove="bFocusToFrame_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\ff1.png"  />
+                                </RadioButton>
+                                <RadioButton GroupName="focus" x:Name="bFocusBetweenFrames" Click="bFocusBetweenFrames_Click" MouseMove="bFocusBetweenFrames_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\ffb.png"  />
+                                </RadioButton>
+                                <RadioButton GroupName="focus" x:Name="bFocusToFrameNext"  Click="bFocusToFrameNext_Click" MouseMove="bFocusToFrameNext_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\ff2.png"  />
+                                </RadioButton>
+                                <Separator/>
+                                <ToggleButton x:Name="tbShowAll" Click="tbShowAll_Click" MouseMove="tbShowAll_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\all2.png" Width="23" Height="16"  />
+                                </ToggleButton>
+                                <ToggleButton x:Name="tbShowAllBdy" Click="tbShowAllBdy_Click" MouseMove="tbShowAllBdy_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\allbdy2.png" Width="23" Height="16" />
+                                </ToggleButton>
+                                <ToggleButton x:Name="tbShowAllItr" Click="tbShowAllItr_Click" MouseMove="tbShowAllItr_MouseMove">
+                                    <Image x:Uid="Image_13" Source="img\SGV\allitr2.png" Width="23" Height="16" />
+                                </ToggleButton>
+                                <ComboBox x:Name="cbScale" MinWidth="30" SelectionChanged="cbScale_SelectionChanged" MouseMove="cbScale_MouseMove"/>
+                            </ToolBar>
+                            <ScrollViewer x:Name="svSGV" Grid.Row="1"  CanContentScroll="True" VerticalScrollBarVisibility="Auto" 
+                                                                                          HorizontalScrollBarVisibility="Auto" 
+                                       SizeChanged="svSGV_SizeChanged"
+                                      SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.BitmapScalingMode="Unspecified" RenderOptions.EdgeMode="Aliased">
+
+                                <ZoomAndPan:ZoomAndPanControl x:Name="zpSGV" SnapsToDevicePixels="True" UseLayoutRounding="True"  RenderOptions.BitmapScalingMode="Unspecified" RenderOptions.EdgeMode="Unspecified" MouseMove="zpSGV_MouseMove" MouseDown="zpSGV_MouseDown" MouseUp="zpSGV_MouseUp"  MouseLeave="zpSGV_MouseLeave" >
+                                    <Border x:Name="bSGV" BorderBrush="Transparent" BorderThickness="0" >
+                                        <dc:lfDrawingCanvas Background="DarkGray" x:Name="dcCanvas" Height="150" Width="350" SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified"  MouseMove="dcCanvas_MouseMove" MouseLeave="dcCanvas_MouseLeave" >
+                                        </dc:lfDrawingCanvas>
+                                    </Border>
+                                </ZoomAndPan:ZoomAndPanControl>
+                            </ScrollViewer>
+                            <DockPanel Grid.Row="2" Background="Transparent" LastChildFill="False"  >
+                                <Image Margin="2,0,0,0" x:Uid="Image_1" Source="img\coor.png" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="15" Height="15"/>
+                                <TextBlock   x:Name="tbCoor"   Background="Transparent" MinWidth="153" Margin="3,3,0,0"  Height="18"/>
+                     <!--           <ComboBox BorderBrush="LightGray" SelectionChanged="cbKind_SelectionChanged" Visibility="Hidden" DockPanel.Dock="Left" x:Name="cbKind"  MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox BorderBrush="LightGray" SelectionChanged="cbEffect_SelectionChanged" Visibility="Hidden" DockPanel.Dock="Left" x:Name="cbEffect"  MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/> -->
+                                <ComboBox x:Name="cbItrKind" BorderBrush="LightGray" SelectionChanged="cbItrKind_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox x:Name="cbItrEffect" BorderBrush="LightGray" SelectionChanged="cbItrEffect_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox x:Name="cbWKind" BorderBrush="LightGray" SelectionChanged="cbWKind_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox x:Name="cbWCover" BorderBrush="LightGray" SelectionChanged="cbWCover_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox x:Name="cbCKind" BorderBrush="LightGray" SelectionChanged="cbCKind_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>
+                                <ComboBox x:Name="cbOKind" BorderBrush="LightGray" SelectionChanged="cbOKind_SelectionChanged" Visibility="Collapsed" DockPanel.Dock="Left" MinWidth="100" Height="22" Style="{Binding ElementName=cbTemplate,Path=Style}"/>                         
+                            </DockPanel>
+                        </Grid>
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcWD" loc:Translate.Uid="dcWDS" Title="{loc:Translate Weapons and drinks viewer}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ToolBar>
+                                <Button Opacity="1" x:Name="bWeaponListUpdate" Margin="5,0,0,0" MouseMove="bWeaponListUpdate_MouseMove" Click="bWeaponListUpdate_Click">
+                                    <Image   Source="img\SGV\refresh.png" Width="23" Height="16"  />
+                                </Button>
+                                <ComboBox x:Name="cbTypeItem" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbTypeItem_SelectionChanged" >
+                                    <ComboBoxItem loc:Translate.Uid="cbiLW" Content="{loc:Translate Light weapons}"/>
+                                    <ComboBoxItem loc:Translate.Uid="cbiHW" Content="{loc:Translate Heavy weapons}" />
+                                    <ComboBoxItem loc:Translate.Uid="cbiTW" Content="{loc:Translate Throw weapons}" />
+                                    <ComboBoxItem loc:Translate.Uid="cbiDr" Content="{loc:Translate Drinks}"/>
+                                </ComboBox>
+                                <ComboBox x:Name="cbItems" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbItems_SelectionChanged"/>
+                                <ComboBox x:Name="cbFiles" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbFiles_SelectionChanged"/>
+                            </ToolBar>
+                            
+                            <dc:lfImage Grid.Row="1" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased" x:Name="lfiWDS"/>
+                            <DockPanel Grid.Row="2" Background="Transparent" LastChildFill="False"  >
+                                <Image Margin="2,0,0,0" x:Uid="Image_1" Source="img\coor.png" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="15" Height="15"/>
+                                <TextBlock   x:Name="tbPic"   Background="Transparent" MinWidth="153" Margin="3,3,0,0"  Height="18"/>
+                            </DockPanel>
+                        </Grid>                                                
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcAP" loc:Translate.Uid="dcAP" Title="{loc:Translate Audio player}"  KeyDown="bAP_KeyDown" UseLayoutRounding="True" SnapsToDevicePixels="True">                        
+                            <StackPanel Background="Transparent" VerticalAlignment="Center">
+                                <MediaElement Name="meAP" LoadedBehavior="Manual" UnloadedBehavior="Stop" Stretch="Fill" 
+                                               MediaEnded="meAP_MediaEnded"/>
+                                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" VerticalAlignment="Center">
+                                    <!-- Play button. -->
+                                <Button  Click="iPlay_MouseDown" IsDefault="True">
+                                    <Image x:Name="iPlay" Source="Img\AP\PlayHS.png"  Margin="2" />
+                                </Button>
+                                <!-- Pause button. -->
+                                <Button x:Name="bAP" Click="iPause_MouseDown">
+                                <Image x:Name="iPause" Source="Img\AP\PauseHS.png"  Margin="2" />
+                                </Button>
+                                    <!-- Stop button. -->
+                                <Button Click="iStop_MouseDown" IsCancel="True">
+                                <Image x:Name="iStop" Source="Img\AP\StopHS.png"  Margin="2" />
+                                </Button>
+                                    <TextBlock Grid.Row="2" FontSize="22" Name="tbAP" Text="Audio file name" Margin="3,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>                       
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcCSV" loc:Translate.Uid="dcDFV" Title="{loc:Translate Dat-file viewer}" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ToolBar x:Name="tbCSV">
+                                <Button Opacity="1" x:Name="bCSVListUpdate" Margin="5,0,0,0" MouseMove="bCSVListUpdate_MouseMove" Click="bCSVListUpdate_Click">
+                                    <Image   Source="img\SGV\refresh.png" Width="23" Height="16"  />
+                                </Button>
+                                <ComboBox x:Name="cbCSVBitmap" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbCSVBitmap_SelectionChanged"/>                                
+                            </ToolBar>
+                            <dc:lfImage Grid.Row="1" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased" x:Name="lfiCSV" MouseLeftButtonDown="lfiCSV_MouseLeftButtonDown" />
+                            <DockPanel Grid.Row="2" Background="Transparent" LastChildFill="False"  >
+                                <Image Margin="2,0,0,0" x:Uid="Image_1" Source="img\coor.png" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="15" Height="15"/>
+                                <TextBlock   x:Name="tbCharPic"   Background="Transparent" MinWidth="153" Margin="3,3,0,0"  Height="18"/>
+                            </DockPanel>
+                        </Grid>
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcSO" loc:Translate.Uid="dcSOFO" Title="{loc:Translate Spawn objects for opoint}" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ToolBar x:Name="tbSO">
+                                <Button Opacity="1" x:Name="bSOListUpdate" Margin="5,0,0,0" MouseMove="bSOListUpdate_MouseMove" Click="bSOListUpdate_Click">
+                                    <Image   Source="img\SGV\refresh.png" Width="23" Height="16"  />
+                                </Button>
+                                <ComboBox x:Name="cbSODatFile" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbSODatFile_SelectionChanged" IsEnabled="True"/>
+                                <ComboBox x:Name="cbSOBitmap" Margin="5,0,0,0" Width="100" HorizontalAlignment="Left" SelectionChanged="cbSOBitmap_SelectionChanged" IsEnabled="True"/>
+                            </ToolBar>
+                            <dc:lfImage Grid.Row="1" UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.EdgeMode="Aliased" x:Name="lfiSO" MouseLeftButtonDown="lfiSO_MouseLeftButtonDown" />
+                            <DockPanel Grid.Row="2" Background="Transparent" LastChildFill="False"  >
+                                <Image Margin="2,0,0,0" x:Uid="Image_1" Source="img\coor.png" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="15" Height="15"/>
+                                <TextBlock   x:Name="tbSOPic"   Background="Transparent" MinWidth="153" Margin="3,3,0,0"  Height="18"/>
+                            </DockPanel>
+                        </Grid>
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcSA" loc:Translate.Uid="dcSA" Title="{loc:Translate Sprite Animator}" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="27"/>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="28"/>
+                            </Grid.RowDefinitions>
+                            <ToolBar>
+                                <TextBox x:Name="tbBaseFPS" Text="30" KeyUp="tbBaseFPS_KeyUp"/>
+                                <CheckBox x:Name="cbEnableRange" Content="ER" IsChecked="False"  Click="cbEnableRange_Click"/>                                
+                                <CheckBox x:Name="cbRepeat" IsEnabled="True" Content="R"/>
+                                <TextBox x:Name="tbRange" IsEnabled="False" Text="0,1,2,3"/>
+                                <Button x:Name="bPlayAnim" Content="Animate" IsEnabled="True"  Click="bPlayAnim_Click"/>
+                            </ToolBar>
+                            <Canvas Background="Black" Grid.Row="1" x:Name="RenderSurface"  SnapsToDevicePixels="True" UseLayoutRounding="True" RenderOptions.EdgeMode="Unspecified" SizeChanged="RenderSurface_SizeChanged" />
+                            <DockPanel Grid.Row="2" Background="Transparent" LastChildFill="False"  >
+                                <Image Margin="2,0,0,0" x:Uid="Image_1" Source="img\coor.png" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="15" Height="15"/>
+                                <TextBlock   x:Name="tbSAPic"   Background="Transparent" MinWidth="153" Margin="3,3,0,0"  Height="18"/>
+                            </DockPanel>
+                        </Grid>
+                    </ad:DockableContent>
+                    <ad:DockableContent x:Name="dcESA" loc:Translate.Uid="dcESA" Title="{loc:Translate Extended sprite animator}" UseLayoutRounding="True">
+                        <Grid>
+                            <Grid.RowDefinitions>                                
+                                <RowDefinition Height="50"/>                             
+                                <RowDefinition Height="25*"/>
+                                <RowDefinition Height="33"/>
+                            </Grid.RowDefinitions>
+                            <!--0-->
+                            <Label x:Name="lTT" Content="Total time" Height="25" Width="68" Margin="4,0,0,24" HorizontalAlignment="Left" />
+                            <TextBox Width="58" Height="22" x:Name="tbTT" HorizontalAlignment="Left" Margin="6,22,0,6" />
+                            <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="66,22,0,0" Name="bTT" VerticalAlignment="Top" Width="31" Click="bTT_Click" />
+                            <Label Content="Each wait" Height="25" HorizontalAlignment="Left" Margin="106,0,0,25" Name="label1" Width="68" />
+                            <TextBox Text="1" Height="22" HorizontalAlignment="Left" Margin="108,22,0,6" Name="tbWait" Width="58" />
+                            <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="168,22,0,0" Name="bEachWait" VerticalAlignment="Top" Width="31" Click="bEachWait_Click"  />
+                            <Label Content="Each state" Height="25" HorizontalAlignment="Left" Margin="209,0,0,25" Name="label2" Width="68" />
+                            <TextBox Text="16"  Height="22" HorizontalAlignment="Left" Margin="211,22,0,6" Name="tbState" Width="58" />
+                            <Button Content="Go" Height="23" HorizontalAlignment="Left" Margin="271,22,0,0" Name="bState" VerticalAlignment="Top" Width="31" Click="bState_Click" />
+                            <!--1-->                            
+                            <!--2-->
+                            <DataGrid AutoGenerateColumns="False" x:Name="dgESA" Grid.Row="1" IsReadOnly="False" GridLinesVisibility="All" CellEditEnding="dgESA_CellEditEnding">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn x:Name="dgtcNFrame"  Header="№ frame" Binding="{Binding Path=NFrame}"/>
+                                    <DataGridTextColumn Header="State" Binding="{Binding Path=State}"/>
+                                    <DataGridTextColumn Header="Wait" Binding="{Binding Path=Wait}"/>
+                                    <DataGridTextColumn Header="Next" Binding="{Binding Path=Next}"/>
+                                    <DataGridTextColumn Header="Hit-a" Binding="{Binding Path=Hit_a}"/>
+                                    <DataGridTextColumn Header="Hit-j" Binding="{Binding Path=Hit_j}"/>
+                                    <DataGridTextColumn Header="Hit-d" Binding="{Binding Path=Hit_d}"/>
+                                    <DataGridTextColumn Width="*" Header="Comment" Binding="{Binding Path=Comment}"/>
+                                </DataGrid.Columns>
+                            </DataGrid>
+                            <!--3-->
+                            <Label Content="Start frame" Height="25" HorizontalAlignment="Left" Margin="4,3,0,5" Name="label3" Width="68"  Grid.Row="2"/>
+                            <TextBox  Height="22" Text="0" HorizontalAlignment="Left" Margin="73,5,0,6" Name="tbStartNFrame" Width="58"  Grid.Row="2"/>
+                            <Button Content="Go"  Height="23" HorizontalAlignment="Left" Margin="263,5,0,0" Name="bGenerate" VerticalAlignment="Top" Width="31"  Grid.Row="2" Click="bGenerate_Click" />
+                            <Label Content="Add frames" Height="25" HorizontalAlignment="Left" Margin="145,2,0,6" Name="label4" Width="70"  Grid.Row="2"/>
+                            <TextBox Height="22" HorizontalAlignment="Left" Text="5" Margin="217,5,0,6" Name="tbCountNewRows" Width="42"  Grid.Row="2"/>
+                            <CheckBox Content="Seconds" Height="16" HorizontalAlignment="Left" Margin="309,6,0,0" Name="cbSeconds"  VerticalAlignment="Top" IsChecked="True" />
+                            <Button Content="Bind Next" Height="23" HorizontalAlignment="Left" Margin="309,22,0,0" Name="bbindNext" VerticalAlignment="Top" Width="75" Click="bbindNext_Click" />
+                            <Button Content="Animate" Grid.Row="2" Height="23" HorizontalAlignment="Left" Margin="309,5,0,0" Name="bAnimate" VerticalAlignment="Top" Width="75" Click="bAnimate_Click" />
+                            <Button Content="Gif" Height="23" HorizontalAlignment="Left" Margin="389,22,0,0" Name="bGif" VerticalAlignment="Top" Width="30" Click="bGif_Click" />
+                        </Grid>
+                    </ad:DockableContent>
+                </ad:DockablePane>
+            </ad:ResizingPanel>
+        </ad:DockingManager>
+    </Grid>
+</Window>

@@ -1,0 +1,14 @@
+﻿<Window x:Uid="Window_1" x:Class="LFStudio.wnd.wHotkeys"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:te="http://icsharpcode.net/sharpdevelop/avalonedit"        
+        xmlns:loc="http://schemas.tomer.com/winfx/2006/xaml/presentation"
+        SizeToContent="WidthAndHeight"
+        loc:Translate.Uid="wtHK"
+        Title="{loc:Translate Hotkeys}" Height="334" Width="413" WindowStartupLocation="CenterOwner">
+    <Grid x:Uid="Grid_1">
+        <te:TextEditor x:Uid="teMain" IsReadOnly="True" x:Name="teMain">
+           
+        </te:TextEditor>
+    </Grid>
+</Window>

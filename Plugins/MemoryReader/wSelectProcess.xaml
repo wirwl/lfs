@@ -1,0 +1,25 @@
+﻿<Window x:Class="MemoryReader.wSelectProcess"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Background="{DynamicResource winbkgcolor}"
+        ResizeMode="NoResize"
+        WindowStyle="ToolWindow"  
+        WindowStartupLocation="CenterOwner"
+        Title="Select process" Height="360" Width="512">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="114*" />
+            <RowDefinition Height="43" />
+        </Grid.RowDefinitions>
+        <ListView  SelectionMode="Single" x:Name="lv" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Grid.Row="0" MouseDoubleClick="lv_MouseDoubleClick">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>            
+        </ListView>
+        <Button Content="Select" Grid.Row="1" Height="23" HorizontalAlignment="Left" Margin="117,10,0,0" Name="bSelect" VerticalAlignment="Top" Width="75" Click="bSelect_Click" />
+        <Button Content="Refresh list" Height="23" HorizontalAlignment="Left" Margin="211,10,0,0" Name="bRefresh" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="bRefresh_Click" />
+        <Button Content="Exit" Height="23" HorizontalAlignment="Left" Margin="308,10,0,0" Name="bExit" VerticalAlignment="Top" Width="75" Grid.Row="1" Click="bExit_Click" />
+    </Grid>
+</Window>

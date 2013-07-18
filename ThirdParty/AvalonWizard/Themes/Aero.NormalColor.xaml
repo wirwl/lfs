@@ -1,0 +1,65 @@
+﻿<!--
+Copyright © Pavel Fedarovich, 2010-2012
+
+This file is part of AvalonWizard.
+ 
+You may at your option receive a license to Avalon Wizard under 
+either the terms of the Apache License version 2.0 or 
+the GNU Lesser General Public License (LGPL) version 2.1 or any later version.
+ 
+AvalonWizard is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ 
+You may obtain a copy of the Apache License at [http://www.apache.org/licenses/LICENSE-2.0].
+You may obtain a copy of the LGPL at [http://www.gnu.org/licenses/].
+-->
+<ResourceDictionary 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:aero="clr-namespace:AvalonWizard.Aero">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="AvalonWizard;component/Themes/AeroWizardHeader.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style TargetType="aero:AeroWizardHeader">
+        <Setter Property="Template" Value="{StaticResource AeroWizardHeader_ControlTemplate}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Style.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsCompositionEnabled" Value="False" />
+                    <Condition Property="IsActive" Value="True" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsCompositionEnabled" Value="False" />
+                    <Condition Property="IsActive" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.GradientInactiveCaptionBrushKey}}" />
+            </MultiTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type aero:AeroWizardPageChrome}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type aero:AeroWizardPageChrome}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Border Grid.Row="0" Background="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderBrush="Transparent" BorderThickness="0">
+                            <ContentPresenter />
+                        </Border>
+                        <Separator Grid.Row="1" Margin="0" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>
