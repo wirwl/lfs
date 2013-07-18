@@ -1,0 +1,7 @@
+ABC=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz
+IC=256
+Shift=12
+SPL=13
+EPL=255
+TextOffset=123
+MBV=15

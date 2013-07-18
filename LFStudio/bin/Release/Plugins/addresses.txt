@@ -1,0 +1,49 @@
+$ Address is hex. number, usually ImageBase + Offset
+$ Type = {dword,word,byte} it's for Value
+$ OutputType = {string,int,double, datetime}
+
+Address=*458C94 Type=dword Comment=Player#1_HP Modifier=value OutputType=int
+Address=*458CA0  Type=dword  Comment=פגגûאגûא Modifier=value OutputType=int
+Address=458348  Type=dword  Comment=addfdff Modifier=value OutputType=int
+Address=45843C  Type=dword  Comment=פûגאפûגאפגûא Modifier=value OutputType=int
+Address=450BBC Type=dword  Comment=test2 Modifier=value/30 OutputType=datetime
+Address=4511A0 Type=dword  Comment=Mouse_move-"Start_game" Modifier=value OutputType=int
+Address=4511E0 Type=dword  Comment=? Modifier=value OutputType=int
+Address=453CDC Type=dword  Comment=MouseYCoordinata Modifier=value OutputType=int
+Address=4546F0 Type=dword  Comment=MouseXCoordinata Modifier=value OutputType=int
+Address=457580 Type=dword  Comment=PressingLeftMouseButton Modifier=value OutputType=int
+Address=4527E4 Type=dword  Comment=PressingRightMouseButton Modifier=value OutputType=int
+Address=44D060 Type=dword  Comment=PressingLeftMouseButton Modifier=value OutputType=int
+Address=44D064 Type=dword  Comment=PressedMenuItem Modifier=value OutputType=int
+Address=458B00 Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B74 Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B7C Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B78 Type=dword  Comment=? Modifier=value OutputType=int
+Address=44F620 Type=dword  Comment=? Modifier=value OutputType=int
+Address=458438  Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B4C  Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B50  Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B54  Type=dword  Comment=? Modifier=value OutputType=int
+Address=450B58  Type=dword  Comment=? Modifier=value OutputType=int
+Address=44D780  Type=dword  Comment=? Modifier=value OutputType=int
+Address=453DA4  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546D0  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546D4  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546F8  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546D8  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4547D0  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4547C0  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546DC  Type=dword  Comment=? Modifier=value OutputType=int
+Address=454824  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546E0  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546E4  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546E8  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546EC  Type=dword  Comment=? Modifier=value OutputType=int
+Address=458418  Type=dword  Comment=Advertise Modifier=value OutputType=int
+Address=45841C  Type=dword  Comment=Advertise Modifier=value OutputType=int
+Address=452928  Type=dword  Comment=? Modifier=value OutputType=int
+Address=4546D0  Type=dword  Comment=? Modifier=value OutputType=int
+Address=453F60  Type=dword  Comment=? Modifier=value OutputType=int
+
+
+

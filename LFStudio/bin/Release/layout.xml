@@ -1,0 +1,31 @@
+<DockingManager version="1.3.0">
+    <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="0,0" Orientation="Vertical">
+        <ResizingPanel ResizeWidth="*" ResizeHeight="*" EffectiveSize="1264,416" Orientation="Horizontal">
+            <DocumentPane IsMain="true" ResizeWidth="0.573926868044515*" ResizeHeight="*" EffectiveSize="722,416" />
+            <ResizingPanel ResizeWidth="0.426073131955485*" ResizeHeight="*" EffectiveSize="536,416" Orientation="Vertical">
+                <DockablePane ResizeWidth="0.488617886178862*" ResizeHeight="0.488617886178862*" EffectiveSize="536,200.333333333333" ID="4034cf81-f136-41a6-a942-a570bd2dd27c" Anchor="Right" IsAutoHidden="false">
+                    <DockableContent Name="dcPE" FloatingWindowSize="250,400" />
+                </DockablePane>
+                <DockablePane ResizeWidth="0.511382113821138*" ResizeHeight="0.511382113821138*" EffectiveSize="536,209.666666666667" ID="a8f27122-d3b7-4fad-ad9c-cbe837a46d6c" Anchor="Right" IsAutoHidden="false">
+                    <DockableContent Name="dcSGV" FloatingWindowSize="250,400" ChildIndex="2" Width="1264" Height="256" Anchor="Bottom" State="Docked" />
+                </DockablePane>
+            </ResizingPanel>
+        </ResizingPanel>
+        <ResizingPanel ResizeWidth="*" ResizeHeight="256" EffectiveSize="1264,256" Orientation="Horizontal">
+            <DockablePane ResizeWidth="0.574938097628284*" ResizeHeight="256" EffectiveSize="723.272126816381,256" ID="911c26f9-3a67-4116-bd8b-f82a8e6f1340" Anchor="Bottom" SelectedIndex="1" IsAutoHidden="false">
+                <DockableContent Name="dcErrors" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcOutput" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcWD" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcAP" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcCSV" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcSO" FloatingWindowSize="250,400" />
+                <DockableContent Name="dcESA" FloatingWindowSize="250,400" />
+            </DockablePane>
+            <DockablePane ResizeWidth="0.425061902371716*" ResizeHeight="*" EffectiveSize="534.727873183619,256" ID="e9eb83bb-4755-4f06-be3a-138dca97d7ba" Anchor="Bottom" IsAutoHidden="false">
+                <DockableContent Name="dcSA" FloatingWindowSize="250,400" ChildIndex="6" Width="1264" Height="256" Anchor="Bottom" State="Docked" />
+            </DockablePane>
+        </ResizingPanel>
+    </ResizingPanel>
+    <Hidden />
+    <Windows />
+</DockingManager>

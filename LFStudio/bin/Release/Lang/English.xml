@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="English" CultureName="English" Culture="en-US">
+	<Value Id="0" Header="File" />
+	<Value Id="1" Header="New file" />
+	<Value Id="2" Header="Open file" />
+	<Value Id="3" Header="Save file" />
+	<Value Id="4" Header="Save all" />
+	<Value Id="5" Header="Close [file]"/>
+	<Value Id="6" Header="Close all files" />
+	<Value Id="7" Header="Recent files" />
+	<Value Id="8" Header="Exit" />
+	<Value Id="9" Header="Edit" />
+	<Value Id="10" Header="Undo" />
+	<Value Id="11" Header="Redo" />
+	<Value Id="12" Header="Cut" />
+	<Value Id="13" Header="Copy" />
+	<Value Id="14" Header="Paste" />
+	<Value Id="15" Header="Delete" />
+	<Value Id="16" Header="Select All" />
+	<Value Id="17" Header="Advanced" />
+	<Value Id="18" Header="Delete empty lines in [file]" />
+	<Value Id="19" Header="Delete spaces in right side of sentence [file]" />
+	<Value Id="20" Header="Project" />
+    <Value Id="tProjs" Text="Projects" />
+	<Value Id="21" Header="Add existing project" />
+	<Value Id="22" Header="Create new project" />
+	<Value Id="23" Header="Project properties" />
+	<Value Id="24" Header="View" />
+	<Value Id="25" Header="Fold/Unfold" />
+	<Value Id="26" Header="Fold all" />
+	<Value Id="27" Header="Unfold all" />
+	<Value Id="28" Header="Fold all 1st level segments" />
+	<Value Id="29" Header="Unfold all 1st level segments" />
+	<Value Id="30" Header="Fold all 2nd level segments" />
+	<Value Id="31" Header="Unfold all 2nd level segments" />
+	<Value Id="32" Header="Go to line number" />
+	<Value Id="33" Header="Run game" />
+	<Value Id="34" Header="Utilities" />
+	<Value Id="35" Header="Get list of codepages" />
+	<Value Id="36" Header="Get list of fonts" />
+	<Value Id="37" Header="Show web browser" />
+	<Value Id="38" Header="Themes" />
+	<Value Id="39" Header="Standard" />
+	<Value Id="40" Header="Default Theme and Color" />
+	<Value Id="41" Header="Change color" />
+	<Value Id="42" Header="Custom" />
+	<Value Id="43" Header="Language" />
+	<Value Id="44" Header="Undo" />
+	<Value Id="45" Header="Undo" />
+	<Value Id="46" Header="Tools" />
+	<Value Id="47" Header="Plugins" />
+	<Value Id="48" Header="Window" />
+	<Value Id="49" Header="Show/Hide Projects Explorer" />
+	<Value Id="50" Header="Show/Hide Errors window" />
+	<Value Id="51" Header="Show/Hide Output window" />
+	<Value Id="miSGV" Header="Show/Hide SGV window" />
+	<Value Id="52" Header="Help" />
+	<Value Id="53" Header="Hotkeys" />
+	<Value Id="54" Header="About" />	
+	<Value Id="56" Header="test" />
+	<Value Id="99" Header="Autodetect" />
+	<Value Id="cmiCNP" Header="Create new project" />
+	<Value Id="cmiAEP" Header="Add existing project" />
+	<Value Id="cmiRDFA" Header="Reparse dat-files for all projects from data.txt" />
+	<Value Id="cmiRG" Header="Run game" />
+	<Value Id="cmiRPFL" Header="Remove project from list" />
+	<Value Id="cmiCP" Header="Clear project" />
+	<Value Id="cmiProp" Header="Properties"  />
+	<Value Id="cmiAdd" Header="Add" />
+	<Value Id="cmiANF" Header="Add new file" />	
+	<Value Id="cmiAEF" Header="Add existing file" />	
+	<Value Id="cmiANVF" Header="Add new virtual folder" />
+    <Value Id="cmiRen" Header="Rename" />
+	<Value Id="cmiIPFS" Header="Import files in project" />
+	<Value Id="cmiRFL" Header="Remove from list" />
+	<Value Id="cmiO" Header="Open" />
+	<Value Id="cmiRen2" Header="Rename" />
+	<Value Id="cmiAdd2" Header="Add" />
+	<Value Id="cmiANF2" Header="Add new file" />
+	<Value Id="cmiAEF2" Header="Add existing file" />
+	<Value Id="cmiANVF" Header="Add new virtual folder" />
+	<Value Id="cmiRFL" Header="Remove from list" />
+	<Value Id="cmiRen3" Header="Rename" />
+	<Value Id="cmiCF" Header="Clear folder" />
+	<Value Id="wtPO" Title="Project options" />
+	<Value Id="lPGE" Content="Path to game executeable" />
+	<Value Id="bBr" Content="Browse..." />
+	<Value Id="lPGF" Content="Path to game folder" />
+	<Value Id="lSW" Content="Secret word for (de)crypting dat files (Please don't edit if you don't know what is it)" />
+	<Value Id="lPGS" Content="Press 'game start' after application run" />
+	<Value Id="bSave" Content="Save" />
+	<Value Id="bCha" Content="Chancel" />
+	<Value Id="wtGTL" Title="Go to line..." />
+	<Value Id="lLN" Content="Line number" />
+	<Value Id="wtAbout" Title="About" />
+	<Value Id="wtError" Title="Error!" />
+	<Value Id="bCTC" Content="Copy to clipboard" />
+	<Value Id="bCon" Content="Continue" />
+	<Value Id="bExit" Content="Exit from Application" />	
+	<Value Id="bSMF" Content="Save modefied files" />
+	<Value Id="wtList" Title="List" />
+	<Value Id="wtHK" Title="Hotkeys" />
+	<Value Id="wtIPFS" Title="Import files in project" />
+	<Value Id="lPRGF" Content="Path to root game folder" />
+	<Value Id="lSP" Content="File extensions for search" />
+	<Value Id="bImport" Content="Import" />
+	<Value Id="bChancel" Content="Chancel" />
+	<Value Id="wtPA" Title="Promt arguments" />
+	<Value Id="lArgs" Content="Arguments" />
+	<Value Id="bRun" Content="Run" />
+	<Value Id="bChancel2" Content="Chancel" />	
+	<Value Id="bqYes" Text="Yes" />	
+	<Value Id="bqNo" Text="No" />	
+	<Value Id="wtQ" Text="Question" />	
+	<Value Id="qRAI" Text="Do you want remove all items?" />	
+	<Value Id="wtInf" Text="Information" />	
+	<Value Id="wtFNE" Text="File not exists." />	
+	<Value Id="tbRG" Text="Run game" />	
+	<Value Id="tFNS" Text="This feature don't support in non-project files." />	
+	<Value Id="tRP" Text="Do you want remove project from list?" />
+	<Value Id="000tDRF" Text="Do you want remove folder?" />
+	<Value Id="tFAO" Text="File already open." />
+	<Value Id="tFNAE" Text="Folder with this name already exists." />
+	<Value Id="tFiNAE" Text="File with this name already exists." />
+	<Value Id="tDrop" Text="Would you like to drop" />
+	<Value Id="tInto" Text="into" />
+	<Value Id="tProj" Text="Project" />
+	<Value Id="etbProj" Text="Project '{0}'" />
+	<Value Id="tLoad" Text="loading" />
+	<Value Id="tSec" Text="seconds" />
+	<Value Id="dcPE" Title="Projects explorer" />
+	<Value Id="dcErr" Title="Errors" />
+	<Value Id="dcDO" Title="Debug output" />	
+	<Value Id="dcSGV" Title="Static graphic viewer" />	
+	<Value Id="tsgvCS" Text="Reload bitmaps" />
+	<Value Id="tsgvDBR" Text="Define bdy region" />
+	<Value Id="tsgvDIR" Text="Define itr region" />
+	<Value Id="tsgvDB" Text="Define bpoint" />
+    <Value Id="tsgvDW" Text="Define wpoint" />
+	<Value Id="tsgvDC" Text="Define cpoint" />
+	<Value Id="tsgvDO" Text="Define opoint" />
+	<Value Id="tsgvDCC" Text="Define centerx and centery" />
+	<Value Id="tsgvICS" Text="Increase canvas size" />
+	<Value Id="tsgvDCS" Text="Decrease canvas size" />
+	<Value Id="tsgvNF" Text="No focus" />
+	<Value Id="tsgvFTF" Text="Focus to frame" />
+	<Value Id="tsgvFBF" Text="Focus between frames" />
+	<Value Id="tsgvFNF" Text="Focus to next frame" />
+	<Value Id="tsgvSAO" Text="Draw all objects" />
+	<Value Id="tsgvSAB" Text="Draw all bdy's" />
+	<Value Id="tsgvSAI" Text="Draw all itr's" />
+	<Value Id="tsgvSC" Text="Scale canvas" />
+	<Value Id="tsgvNPrj" Text="This feature work only in context of project system"/>
+	<Value Id="wdReload" Text="Reload weapons and drinks list" />
+	<Value Id="cbiLW" Content="Light weapons" />
+	<Value Id="cbiHW" Content="Heavy weapons" />
+	<Value Id="cbiTW" Content="Throw weapons" />
+	<Value Id="cbiDr" Content="Drinks" />
+	<Value Id="dcWDS" Title="Weapons and drinks viewer" />
+	<Value Id="dcAP" Title="Audio player" />
+    <Value Id="miAP" Header="Show/Hide Audioplayer" />
+	<Value Id="miWD" Header="Show/Hide Weapons and drinks viewer window" />
+	<Value Id="cmiFI" Header="Flip image" />
+	<Value Id="dcDFV" Title="Dat-file viewer" />
+	<Value Id="tSO" Text="Reload" />
+	<Value Id="dcSOFO"	Title="Spawn objects for opoint" />
+	<Value Id="dcSA" Title="Sprite Animator" />
+	<Value Id="dcESA" Title="Extended sprite animator" />
+</Dictionary>

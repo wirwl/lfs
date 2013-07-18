@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<adce xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <For_autocompletion_window>
+    <Frame>
+      <init_tag>&lt;bmp_begin&gt;</init_tag>
+      <close_tag>&lt;bmp_end&gt;</close_tag>
+      <content_in_init_tag>false</content_in_init_tag>
+      <body>
+        <ArrayOfString>
+          <string>name: </string>
+        </ArrayOfString>
+        <ArrayOfString>
+          <string>head: </string>
+        </ArrayOfString>
+        <ArrayOfString>
+          <string>small: </string>
+        </ArrayOfString>
+        <ArrayOfString>
+          <string>file(-): </string>
+          <string>w: </string>
+          <string>h: </string>
+          <string>row: </string>
+          <string>col: </string>
+        </ArrayOfString>
+      </body>
+      <subframes />
+    </Frame>
+    <Frame>
+      <init_tag>&lt;frame&gt;</init_tag>
+      <close_tag>&lt;frame_end&gt;</close_tag>
+      <content_in_init_tag>true</content_in_init_tag>
+      <body>
+        <ArrayOfString>
+          <string>pic: </string>
+          <string>state: </string>
+          <string>wait: </string>
+          <string>next: </string>
+        </ArrayOfString>
+      </body>
+      <subframes>
+        <Frame>
+          <init_tag>bpoint:</init_tag>
+          <close_tag>bpoint_end:</close_tag>
+          <content_in_init_tag>false</content_in_init_tag>
+          <body>
+            <ArrayOfString>
+              <string>x: </string>
+              <string>y:</string>
+            </ArrayOfString>
+          </body>
+          <subframes />
+        </Frame>
+        <Frame>
+          <init_tag>wpoint:</init_tag>
+          <close_tag>wpoint_end:</close_tag>
+          <content_in_init_tag>false</content_in_init_tag>
+          <body>
+            <ArrayOfString>
+              <string>kind: </string>
+              <string>x: </string>
+              <string>y:</string>
+              <string>weaponact: </string>
+              <string>attacking: </string>
+              <string>cover: </string>
+              <string>dvx: </string>
+              <string>dvy: </string>
+              <string>dvz: </string>
+            </ArrayOfString>
+          </body>
+          <subframes />
+        </Frame>
+        <Frame>
+          <init_tag>bdy:</init_tag>
+          <close_tag>bdy_end:</close_tag>
+          <content_in_init_tag>false</content_in_init_tag>
+          <body>
+            <ArrayOfString>
+              <string>kind: </string>
+              <string>x: </string>
+              <string>y:</string>
+              <string>w: </string>
+              <string>h: </string>
+            </ArrayOfString>
+          </body>
+          <subframes />
+        </Frame>
+      </subframes>
+    </Frame>
+    <Frame>
+      <init_tag>&lt;weapon_strength_list&gt;</init_tag>
+      <close_tag>&lt;weapon_strength_list_end&gt;</close_tag>
+      <content_in_init_tag>false</content_in_init_tag>
+      <body />
+      <subframes>
+        <Frame>
+          <init_tag>entry: </init_tag>
+          <close_tag />
+          <content_in_init_tag>true</content_in_init_tag>
+          <body>
+            <ArrayOfString>
+              <string>dvx: </string>
+              <string>fall: </string>
+            </ArrayOfString>
+          </body>
+          <subframes />
+        </Frame>
+      </subframes>
+    </Frame>
+  </For_autocompletion_window>
+  <For_fold_system>
+    <FrameDesc>
+      <init_tag>&lt;frame&gt;</init_tag>
+      <close_tag>&lt;frame_end&gt;</close_tag>
+    </FrameDesc>
+    <FrameDesc>
+      <init_tag>&lt;weapon_strength_list&gt;</init_tag>
+      <close_tag>&lt;weapon_strength_list_end&gt;</close_tag>
+    </FrameDesc>
+    <FrameDesc>
+      <init_tag>&lt;phase&gt;</init_tag>
+      <close_tag>&lt;phase_end&gt;</close_tag>
+    </FrameDesc>
+    <FrameDesc>
+      <init_tag>&lt;stage&gt;</init_tag>
+      <close_tag>&lt;stage_end&gt;</close_tag>
+    </FrameDesc>
+    <FrameDesc>
+      <init_tag>#region</init_tag>
+      <close_tag>#endregion</close_tag>
+    </FrameDesc>
+  </For_fold_system>
+  <CacheByExtensionEnabled>false</CacheByExtensionEnabled>
+  <CacheByFileEnabled>false</CacheByFileEnabled>
+  <StandardPassword>SiuHungIsAGoodBearBecauseHeIsVeryGood</StandardPassword>
+  <isEnabledActiveLineHighlight>true</isEnabledActiveLineHighlight>
+  <isEnabledBackgroundHighlight>true</isEnabledBackgroundHighlight>
+  <oddLineColor>#FFF5F5F5</oddLineColor>
+  <evenLineColor>#FFFFFFFF</evenLineColor>
+  <firstActiveLineColor>#FFE1F3FF</firstActiveLineColor>
+  <secondActiveLineColor>#FFE1F3FF</secondActiveLineColor>
+  <isFixedBackgroundLines>false</isFixedBackgroundLines>
+  <AdvancedTextEditorOptions>
+    <ConvertTabsToSpaces>true</ConvertTabsToSpaces>
+    <EnableTextDragDrop>false</EnableTextDragDrop>
+  </AdvancedTextEditorOptions>
+  <TextEditorOptions>
+    <EncodingForSavedText>Default</EncodingForSavedText>
+    <FlowDirection>0</FlowDirection>
+    <FontFamily>Sergoe UI</FontFamily>
+    <FontSize>12</FontSize>
+    <FontStyle>Normal</FontStyle>
+    <FontWeight>Bold</FontWeight>
+    <FontStretch>Medium</FontStretch>
+    <WordWrap>false</WordWrap>
+    <ShowLineNumbers>true</ShowLineNumbers>
+  </TextEditorOptions>
+  <isFoldEnable>true</isFoldEnable>
+  <isSaveFilesAfterAppCrush>true</isSaveFilesAfterAppCrush>
+  <isShowUnderline>true</isShowUnderline>
+  <underlineThisWords>
+    <string>&lt;frame_end&gt;</string>
+    <string>&lt;bmp_end&gt;</string>
+  </underlineThisWords>
+  <isComboboxesInTop>false</isComboboxesInTop>
+  <ColorForStandardTheme />
+  <AdvancedTheme />
+  <Language>English</Language>
+  <BodyBorderColor>#FF0000FF</BodyBorderColor>
+  <BodyDashes>
+    <double>0</double>
+    <double>2</double>
+  </BodyDashes>
+  <BodyBackgroundColor>#000000FF</BodyBackgroundColor>
+  <ItrBorderColor>#FFFF0000</ItrBorderColor>
+  <ItrDashes>
+    <double>2</double>
+    <double>2</double>
+  </ItrDashes>
+  <ItrBackgroundColor>#00F00000</ItrBackgroundColor>
+  <FromColorWpoint>#FFFFFFFF</FromColorWpoint>
+  <ToColorWpoint>#FF000000</ToColorWpoint>
+  <DurationWpoint>1</DurationWpoint>
+  <isAutoReverseWpoint>false</isAutoReverseWpoint>
+  <FromColorCenter>#FFFFFFFF</FromColorCenter>
+  <ToColorCenter>#FFFF0000</ToColorCenter>
+  <DurationCenter>2</DurationCenter>
+  <isAutoReverseCenter>false</isAutoReverseCenter>
+  <FromColorOpoint>#FFFFFFFF</FromColorOpoint>
+  <ToColorOpoint>#FF000000</ToColorOpoint>
+  <DurationOpoint>1</DurationOpoint>
+  <isAutoReverseOpoint>false</isAutoReverseOpoint>
+  <FromColorCpoint>#FFFFFFFF</FromColorCpoint>
+  <ToColorCpoint>#FF000000</ToColorCpoint>
+  <DurationCpoint>0.1</DurationCpoint>
+  <isAutoReverseCpoint>true</isAutoReverseCpoint>
+  <isSGVTransparent>true</isSGVTransparent>
+  <SGVColorKey>Black</SGVColorKey>
+  <sgvBkg>#FF1F1F1F</sgvBkg>
+  <canvasBkg>Black</canvasBkg>
+  <canvasBorderBkg>White</canvasBorderBkg>
+  <canvasBorderSize>0</canvasBorderSize>
+  <isSGVAnimated>false</isSGVAnimated>
+  <firstSGVColor>Transparent</firstSGVColor>
+  <secondSGVColor>Transparent</secondSGVColor>
+  <firstSGVColorOffset>1</firstSGVColorOffset>
+  <secondSGVColorOffset>0</secondSGVColorOffset>
+  <fromSGVColor1>White</fromSGVColor1>
+  <toSGVColor1>Black</toSGVColor1>
+  <DecRatioColor1>1</DecRatioColor1>
+  <AccRatioColor1>0</AccRatioColor1>
+  <fromSGVColor2>White</fromSGVColor2>
+  <toSGVColor2>Black</toSGVColor2>
+  <DecRatioColor2>1</DecRatioColor2>
+  <AccRatioColor2>0</AccRatioColor2>
+  <SGVDuration>3</SGVDuration>
+  <isSGVreverse>true</isSGVreverse>
+  <SGVGradientAngle>90</SGVGradientAngle>
+  <isEnableDashStyle>false</isEnableDashStyle>
+  <lastKindItrIndex>8</lastKindItrIndex>
+  <lastKindCpointIndex>0</lastKindCpointIndex>
+  <lastKindOpointIndex>0</lastKindOpointIndex>
+  <lastKindWpointIndex>0</lastKindWpointIndex>
+  <lastCoverWpointIndex>1</lastCoverWpointIndex>
+  <lastEffectItrIndex>5</lastEffectItrIndex>
+  <scaleLimit>200</scaleLimit>
+  <scaleIndex>0</scaleIndex>
+  <scaleBitmapMode>NearestNeighbor</scaleBitmapMode>
+  <startCanvasWidth>240</startCanvasWidth>
+  <startCanvasHeight>100</startCanvasHeight>
+  <sgvFocusTo>1</sgvFocusTo>
+  <isShowAllinSGV>true</isShowAllinSGV>
+  <isShowAllBdy>false</isShowAllBdy>
+  <isShowAllItr>false</isShowAllItr>
+  <isAddFileToTreeViewAfterFlip>true</isAddFileToTreeViewAfterFlip>
+  <filtrForWeapon_id>100-199,213,217,218</filtrForWeapon_id>
+  <filstrForWeapon_type>1,2,4,6</filstrForWeapon_type>
+  <filtrForOpoint_type>0,3</filtrForOpoint_type>
+  <baseGameFPS>30</baseGameFPS>
+  <isRangeEnabled>false</isRangeEnabled>
+</adce>
