@@ -352,7 +352,9 @@
   <ItemGroup>
     <Resource Include="Img\SGV\refresh.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="License.txt" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Img\AP\PauseHS.png" />
     <Resource Include="Img\AP\PlayHS.png" />
