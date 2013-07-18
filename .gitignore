@@ -8,11 +8,11 @@
 
 # Build results
 
-[Dd]ebug/
-[Rr]elease/
+#[Dd]ebug/
+#[Rr]elease/
 x64/
 build/
-[Bb]in/
+#[Bb]in/
 [Oo]bj/
 
 # MSTest test Results
@@ -151,3 +151,22 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+*.dll
+*.exe
+*.config
+/LFStudio/bin/Release/AvalonDock.xml
+/LFStudio/bin/Release/ICSharpCode.AvalonEdit.xml
+*.manifest
+/LFStudio/bin/Release/Plugins/Apache License.txt
+/LFStudio/bin/Release/Plugins/AvalonWizard.xml
+/LFStudio/bin/Release/Plugins/ICSharpCode.AvalonEdit.xml
+/LFStudio/bin/Release/Plugins/LGPL.txt
+/ThirdParty/AvalonDock/bin/Release/AvalonDock.XML
+/ThirdParty/AvalonWizard/bin/Debug/netfx40/Apache License.txt
+/ThirdParty/AvalonWizard/bin/Debug/netfx40/AvalonWizard.xml
+/ThirdParty/AvalonWizard/bin/Debug/netfx40/LGPL.txt
+/ThirdParty/AvalonWizard/bin/Release/netfx40/Apache License.txt
+/ThirdParty/AvalonWizard/bin/Release/netfx40/AvalonWizard.xml
+/ThirdParty/AvalonWizard/bin/Release/netfx40/LGPL.txt
+/ThirdParty/FindReplace/bin/Release/AvalonDock.xml
+/ThirdParty/FindReplace/bin/Release/ICSharpCode.AvalonEdit.xml
