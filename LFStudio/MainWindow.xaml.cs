@@ -74,31 +74,15 @@ namespace LFStudio
         public delegate void DelegateWithoutArguments();
         BackgroundWorker bwLoadPlugins;
         BackgroundWorker bwLoadProjects;
-        //BackgroundWorker bwLoadAndCropBitmaps;
-        //BackgroundWorker bwOpenFiles;
-        //  lfItem CurrentlfItem;
-        // int CurrentWeaponIndex = 0;
-        //  int CurrentDrinkIndex = 0;
         public int CurrentFrameIndex = -1;
         public int Objectindex = 0;
-        public WhereStand Otvet;
-        //public object CurrentObjectForEditing = null;
+        public WhereStand Otvet; 
         public bool isFirstMMForKFocus = true;
-
-        /*   public List<string> icItr;
-           public List<string> icWpoint;
-           public List<string> icCpoint;
-           public List<string> icOpoint;
-           public List<string> lsWpoint;*/
-
         public double startX;
         public double startY;
-
-
         public Point origZoomAndPanControlMouseDownPoint;
         public Point origContentMouseDownPoint;
         public Point origContentMouseDownPointDouble;
-
         #region Init
         public TextEditor teCurActiveDocument;
         public Brush ibrush;
