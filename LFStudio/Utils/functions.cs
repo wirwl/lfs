@@ -20,14 +20,14 @@ namespace lf2dat
             byte[] buffer = new byte[fileStream.Length];
             fileStream.Read(buffer, 0, buffer.Length);
             StringBuilder decryptedtext = new StringBuilder((int)fileStream.Length);
-            //fileStream.Close();
+            fileStream.Close();
             int index = 12;
-            for (int i = 123; i < buffer.Length; i++)
+            for (int i = 123; i < buffer.Length; i++)///////////////
             {
-                if ((byte)password[index] > buffer[i])
+               /* if ((byte)password[index] > buffer[i])
                 {
 
-                }
+                }*/
                 byte b1 = (byte)(buffer[i] - (byte)password[index]);
                 decryptedtext.Append((char)b1);
 
@@ -63,7 +63,7 @@ namespace lf2dat
             fs.Write(dat, 0, 123 + text.Length);
             fs.Close();
         }        
-        public static void AddFileSecurity(string fileName, string account, FileSystemRights rights, AccessControlType controlType)
+    /*    public static void AddFileSecurity(string fileName, string account, FileSystemRights rights, AccessControlType controlType)
         {
             FileSecurity fSecurity = File.GetAccessControl(fileName);
             fSecurity.AddAccessRule(new FileSystemAccessRule(account, rights, controlType));            
@@ -75,6 +75,6 @@ namespace lf2dat
             fSecurity.RemoveAccessRule(new FileSystemAccessRule(account, rights, controlType));
             File.SetAccessControl(fileName, fSecurity);
 
-        }
+        }*/
     }
 }
