@@ -1,0 +1,133 @@
+<SyntaxDefinition name="lf2" xmlns="http://icsharpcode.net/sharpdevelop/syntaxdefinition/2008">
+    <Color name="Comment" foreground="Green" />
+    <Color name="String" foreground="Blue" />
+    <Color name="Tag" foreground="Brown"/>
+    <!-- This is the main ruleset. -->
+    <RuleSet>
+        <Span color="Comment" begin="#" />                		
+        <Keywords fontWeight="bold" foreground="DarkRed">
+            <Word>pic</Word>
+			<Word>state</Word>
+			<Word>wait</Word>
+			<Word>next</Word>
+			<Word>dvx</Word>
+			<Word>dvy</Word>
+			<Word>dvy</Word>
+			<Word>dvz</Word>
+			<Word>centerx</Word>
+			<Word>centery</Word>
+			<Word>hit_a</Word>
+			<Word>hit_d</Word>
+			<Word>hit_j</Word>	
+			<Word>x</Word>
+			<Word>y</Word>
+			<Word>kind</Word>
+			<Word>weaponact</Word>
+			<Word>attacking</Word>
+			<Word>cover</Word>
+			<Word>w</Word>
+			<Word>h</Word>
+			<Word>a</Word>
+			<Word>catchingact</Word>
+			<Word>caughtact</Word>			
+			<Word>row</Word>			
+			<Word>col</Word>			
+			<Word>name</Word>			
+			<Word>head</Word>			
+			<Word>small</Word>			
+			<Word>file</Word>			
+			<Word>walking_frame_rate</Word>			
+			<Word>walking_speed</Word>			
+			<Word>walking_speedz</Word>			
+			<Word>running_frame_rate</Word>			
+			<Word>running_speed</Word>			
+			<Word>running_speedz</Word>			
+			<Word>heavy_walking_speed</Word>			
+			<Word>heavy_walking_speedz</Word>			
+			<Word>heavy_running_speed</Word>			
+			<Word>heavy_running_speedz</Word>			
+			<Word>jump_height</Word>			
+			<Word>jump_distance</Word>			
+			<Word>jump_distancez</Word>			
+			<Word>dash_height</Word>			
+			<Word>dash_distance</Word>			
+			<Word>dash_distancez</Word>			
+			<Word>rowing_height</Word>			
+			<Word>rowing_distance</Word>			
+			<Word>weapon_hp</Word>			
+			<Word>weapon_drop_hurt</Word>			
+			<Word>weapon_hit_sound</Word>			
+			<Word>weapon_drop_sound</Word>			
+			<Word>weapon_broken_sound</Word>			
+			<Word>fall</Word>			
+			<Word>vrest</Word>			
+			<Word>bdefend</Word>			
+			<Word>injury</Word>			
+			<Word>id</Word>			
+			<Word>hp</Word>			
+			<Word>times</Word>			
+			<Word>mp</Word>		
+			<Word>ratio</Word>		
+			<Word>bound</Word>
+			<Word>vaction</Word>
+			<Word>throwvx</Word>
+			<Word>throwvy</Word>
+			<Word>throwvz</Word>
+			<Word>throwinjury</Word>
+			<Word>dircontrol</Word>
+			<Word>arest</Word>
+			<Word>effect</Word>
+			<Word>hurtable</Word>
+			<Word>decrease</Word>
+			<Word>fronthurtact</Word>
+			<Word>backhurtact</Word>
+			<Word>zwidth</Word>
+			<Word>oid</Word>
+			<Word>facing</Word>
+			<Word>action</Word>
+			<Word>hit_Fa</Word>
+			<Word>hit_Ua</Word>
+			<Word>hit_Da</Word>
+			<Word>hit_Fj</Word>
+			<Word>hit_Uj</Word>
+			<Word>hit_Dj</Word>
+			<Word>hit_ja</Word>
+            <!-- ... -->
+        </Keywords>
+		<Keywords fontWeight="bold" foreground="DarkOrange">
+			<Word>sound</Word>
+			<Word>music</Word>
+		</Keywords>
+		<Keywords fontWeight="bold" foreground="Black">		
+			<Word>:</Word>
+        </Keywords>
+		<Keywords fontWeight="bold" foreground="OrangeRed">	
+		<Word>opoint</Word>
+		<Word>opoint_end</Word>
+			<Word>weapon_strength_list</Word>		
+			<Word>weapon_strength_list_end</Word>		
+			<Word>bmp_begin</Word>			 
+			<Word>bmp_end</Word>
+			<Word>frame</Word>
+			<Word>frame_end</Word>
+			<Word>stage</Word>
+			<Word>stage_end</Word>
+			<Word>phase</Word>
+			<Word>phase_end</Word>
+			<Word>&lt;</Word>
+			<Word>&gt;</Word>
+        </Keywords>		
+		<Keywords fontWeight="bold" foreground="Teal">
+			<Word>bpoint</Word>
+			<Word>bpoint_end</Word>
+			<Word>bdy</Word>
+			<Word>bdy_end</Word>
+			<Word>wpoint</Word>
+			<Word>wpoint_end</Word>
+			<Word>itr</Word>
+			<Word>itr_end</Word>
+			<Word>cpoint</Word>
+			<Word>cpoint_end</Word>			
+		</Keywords>		      		  
+    </RuleSet>
+</SyntaxDefinition>
