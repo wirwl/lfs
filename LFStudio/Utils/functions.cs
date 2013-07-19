@@ -14,8 +14,7 @@ namespace lf2dat
 
         //Standart lf password: SiuHungIsAGoodBearBecauseHeIsVeryGood
         public static String DatFileToPlainText(String filepath, String password)
-        {
-            //new LFStudio.wException("test1").ShowDialog();
+        {            
             FileStream fileStream = new FileStream(filepath, FileMode.Open, FileAccess.Read);
             byte[] buffer = new byte[fileStream.Length];
             fileStream.Read(buffer, 0, buffer.Length);
@@ -23,14 +22,9 @@ namespace lf2dat
             fileStream.Close();
             int index = 12;
             for (int i = 123; i < buffer.Length; i++)///////////////
-            {
-               /* if ((byte)password[index] > buffer[i])
-                {
-
-                }*/
+            {              
                 byte b1 = (byte)(buffer[i] - (byte)password[index]);
                 decryptedtext.Append((char)b1);
-
                 index++;
                 if (index == password.Length) index = 0;
             }
@@ -47,19 +41,13 @@ namespace lf2dat
             }
             int index = 12;
             for (int i = 0; i < text.Length; i++)
-            {
-                //if (text[i] == '\r')
-                // {
-
-                // }
+            {         
                 byte b1 = (byte)((byte)text[i] + (byte)password[index]);
                 dat[i + 123] = b1;
                 index++;
                 if (index == password.Length) index = 0;
-            }
-            //AddFileSecurity(filepath, WindowsIdentity.GetCurrent().Name, FileSystemRights.WriteData, AccessControlType.Allow);
-            FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);
-            //RemoveFileSecurity(filepath, WindowsIdentity.GetCurrent().Name, FileSystemRights.ReadData, AccessControlType.Allow);
+            }            
+            FileStream fs = new FileStream(filepath, FileMode.Create, FileAccess.Write);            
             fs.Write(dat, 0, 123 + text.Length);
             fs.Close();
         }        
