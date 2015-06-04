@@ -701,6 +701,7 @@ namespace LFStudio
         void bwBackgroundWork_DoWork_LoadProjects(object sender, DoWorkEventArgs e)
         {
             //////////////////////////////////////////////////////////////////////////////
+            if (!File.Exists(programfolder + "projects.txt")) new FileStream(programfolder + "projects.txt",FileMode.CreateNew).Close();            
             StreamReader sr = new StreamReader(programfolder + "projects.txt", Encoding.UTF8);
             string project = LanguageDictionary.Current.Translate<string>("tProj", "Text", "Project");
             string loading = LanguageDictionary.Current.Translate<string>("tLoad", "Text", "loading");
