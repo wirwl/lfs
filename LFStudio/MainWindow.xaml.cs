@@ -281,17 +281,20 @@ namespace LFStudio
                 if (miTools.Items.Count == 0) miTools.Visibility = System.Windows.Visibility.Collapsed;
                 ///////////////////////////////////////////////////
                 string rf = programfolder + "recent.ini";
-                if (!File.Exists(rf)) File.Create(rf);
-                StreamReader srRecent = new StreamReader(File.OpenRead(rf));
-                for (int i = 0; i < rfCount; i++)
-                {
-                    string st = srRecent.ReadLine();
-                    if (st == null) break;
-                    if (st.Trim().Length == 0) continue;
-                    RecentFiles.Add(st);
-                }
-                srRecent.Close();
-                RecentFilesToMenu();
+				if (File.Exists(rf))
+				{
+					using (StreamReader srRecent = new StreamReader(rf))
+					{
+						for (int i = 0; i < rfCount; i++)
+						{
+							string st = srRecent.ReadLine();
+							if (st == null) break;
+							if (st.Trim().Length == 0) continue;
+							RecentFiles.Add(st);
+						}
+					}
+					RecentFilesToMenu();
+				}
                 ///////////////////////////////////////////////////
                 string[] adv = Directory.GetFiles(programfolder + @"Themes\");
                 for (int i = 0; i < adv.Length; i++)
@@ -2264,37 +2267,41 @@ namespace LFStudio
         #region Mainmenu event dispatchers
         public void LoadListOfOpenFiles()
         {
+			string ofilesPath = programfolder + "ofiles.ini";
+			if(!File.Exists(ofilesPath))
+				return;
             //Stopwatch sw = new Stopwatch(); sw.Start();
             isOpenManyFiles = true;
-            StreamReader sr = new StreamReader(programfolder + "ofiles.ini", Encoding.UTF8);
-            string path;
-            int nproject;
-            while (true)
-            {
-                path = sr.ReadLine();
-                if (path == null) break;
-                if (path.Trim().Length == 0) continue;
-                nproject = Convert.ToInt32(G.GetObjectFromTag(path, 1));
-                path = G.GetObjectFromTag(path, 0);
-                if (!File.Exists(path)) continue;
-                isOpenManyFiles = true;
-                OpenFile(path, nproject);
-            }
-            sr.BaseStream.Close();
-            sr.Close();
+			using (StreamReader sr = new StreamReader(ofilesPath, Encoding.UTF8))
+			{
+				string path;
+				int nproject;
+				while (true)
+				{
+					path = sr.ReadLine();
+					if (path == null) break;
+					if (path.Trim().Length == 0) continue;
+					nproject = Convert.ToInt32(G.GetObjectFromTag(path, 1));
+					path = G.GetObjectFromTag(path, 0);
+					if (!File.Exists(path)) continue;
+					isOpenManyFiles = true;
+					OpenFile(path, nproject);
+				}
+			}
             //sw.Stop();
             //teOutput.AppendText("LoadListOfOpenFiles(): " + sw.Elapsed.TotalSeconds.ToString() + " sec.");
             //teOutput.AppendText(Environment.NewLine);
             //sw.Reset();
         }
         public void SaveListOfOpenFiles()
-        {
-            StreamWriter f;
-            if (!File.Exists(programfolder + "ofiles.ini")) File.Create(programfolder + "ofiles.ini");
-            f = new StreamWriter(programfolder + "ofiles.ini");
+		{
+			string ofilesPath = programfolder + "ofiles.ini";
             ItemCollection ic = Utils.AvalonDock.GetDocuments(DockManager.ActiveDocument);
-            for (int i = 0; i < DockManager.Documents.Count; i++) f.WriteLine(DockManager.Documents[i].Tag);
-            f.Close();
+			using (StreamWriter sw = new StreamWriter(ofilesPath))
+			{
+				for (int i = 0; i < DockManager.Documents.Count; i++)
+					sw.WriteLine(DockManager.Documents[i].Tag);
+			}
         }
         private void of_Click(object sender, RoutedEventArgs e)//Open file
         {

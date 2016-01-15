@@ -17,10 +17,10 @@
         Closed="wMainWindow_Closed"
         KeyDown="wMainWindow_KeyDown"        
         Width="1280"                                      
-        Height="768"
+        Height="720"
         UseLayoutRounding="True"
         SnapsToDevicePixels="True"
-        TextOptions.TextFormattingMode="Ideal"              
+        TextOptions.TextFormattingMode="Ideal" WindowStartupLocation="CenterScreen"              
         >
 
     <!--  Style="{DynamicResource winColor}" -->

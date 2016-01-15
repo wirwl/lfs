@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Dictionary EnglishName="Russian" CultureName="Русский" Culture="ru-RU">
+	<Value Id="0" Header="Файл" />
+	<Value Id="1" Header="Новый" />
+	<Value Id="2" Header="Открыть" />
+	<Value Id="3" Header="Сохранить" />
+	<Value Id="4" Header="Сохранить всё" />
+	<Value Id="5" Header="Закрыть"/>
+	<Value Id="6" Header="Закрыть всё" />
+	<Value Id="7" Header="Недавние файлы" />
+	<Value Id="8" Header="Выход" />
+	<Value Id="9" Header="Правка" />
+	<Value Id="10" Header="Отмена" />
+	<Value Id="11" Header="Повтор" />
+	<Value Id="12" Header="Вырезать" />
+	<Value Id="13" Header="Копировать" />
+	<Value Id="14" Header="Вставить" />
+	<Value Id="15" Header="Удалить" />
+	<Value Id="16" Header="Выделить всё" />
+	<Value Id="17" Header="Дополнительно" />
+	<Value Id="18" Header="Удалить пустые строки" />
+	<Value Id="19" Header="Удалить пробелы в правой части строки" />
+	<Value Id="20" Header="Проект" />
+	<Value Id="tProjs" Text="Проекты" />
+	<Value Id="21" Header="Добавить существующий проект" />
+	<Value Id="22" Header="Создать новый проект" />
+	<Value Id="23" Header="Свойства проекта" />
+	<Value Id="24" Header="Обзор" />
+	<Value Id="25" Header="Свернуть/Развернуть" />
+	<Value Id="26" Header="Свернуть всё" />
+	<Value Id="27" Header="Развернуть всё" />
+	<Value Id="28" Header="Свернуть все тэги 1-го уровня" />
+	<Value Id="29" Header="Развернуть все тэги 1-го уровня" />
+	<Value Id="30" Header="Свернуть все тэги 2-го уровня" />
+	<Value Id="31" Header="Развернуть все тэги 2-го уровня" />
+	<Value Id="32" Header="К строке..." />
+	<Value Id="33" Header="Запуск" />
+	<Value Id="34" Header="Утилиты" />
+	<Value Id="35" Header="Показать список кодовых страниц" />
+	<Value Id="36" Header="Показать список шрифтов" />
+	<Value Id="37" Header="Показать вэб-браузер" />
+	<Value Id="38" Header="Темы" />
+	<Value Id="39" Header="Стандартные" />
+	<Value Id="40" Header="Тема и цвет по умолчанию" />
+	<Value Id="41" Header="Изменить цвет" />
+	<Value Id="42" Header="Пользовательские" />
+	<Value Id="43" Header="Язык" />
+	<Value Id="44" Header="Undo" />
+	<Value Id="45" Header="Undo" />
+	<Value Id="46" Header="Инструменты" />
+	<Value Id="47" Header="Плагины" />
+	<Value Id="48" Header="Окна" />
+	<Value Id="49" Header="Показать/Скрыть обозреватель проектов" />
+	<Value Id="50" Header="Показать/Скрыть окно ошибок" />
+	<Value Id="51" Header="Показать/Скрыть окно вывода" />
+	<Value Id="miSGV" Header="Показать/Скрыть окно стат. граф. просмоторщика" />
+	<Value Id="52" Header="Помощь" />
+	<Value Id="53" Header="Горячие клавиши" />
+	<Value Id="54" Header="О программе..." />	
+	<Value Id="56" Header="Тест" />
+	<Value Id="99" Header="Авто определение" />
+	<Value Id="cmiCNP" Header="Создать новый проект" />
+	<Value Id="cmiAEP" Header="Добавить существующий проект" />
+	<Value Id="cmiRDFA" Header="Анализ дат-файлов всех проектов из data.txt" />
+	<Value Id="cmiRG" Header="Запуск" />
+	<Value Id="cmiRPFL" Header="Убрать проект из списка" />
+	<Value Id="cmiCP" Header="Очистить проект" />
+	<Value Id="cmiProp" Header="Свойтства"  />
+	<Value Id="cmiAdd" Header="Добавить" />	
+	<Value Id="cmiANF" Header="Добавить новый файл" />	
+	<Value Id="cmiAEF" Header="Добавить существующий файл" />	
+	<Value Id="cmiANVF" Header="Добавить новую виртуальную папку" />
+	<Value Id="cmiRen" Header="Переименовать" />
+	<Value Id="cmiIPFS" Header="Импорт файлов в проект" />
+	<Value Id="cmiRFL" Header="Убрать из списка" />
+	<Value Id="cmiO" Header="Открыть" />
+	<Value Id="cmiRen2" Header="Переименовать" />
+	<Value Id="cmiAdd2" Header="Добавить" />
+	<Value Id="cmiANF2" Header="Добавить новый файл" />
+    <Value Id="cmiAEF2" Header="Добавить существующиий файл" />
+	<Value Id="cmiANVF" Header="Добавить новую виртуальную папку" />
+	<Value Id="cmiRFL" Header="Убрать из списка" />
+	<Value Id="cmiRen3" Header="Переименовать" />
+	<Value Id="cmiCF" Header="Очистить папку" />
+	<Value Id="wtPO" Title="Свойства проекта" />
+	<Value Id="lPGE" Content="Путь к экзешнику игры" />
+	<Value Id="bBr" Content="Обзор..." />
+	<Value Id="lPGF" Content="Рабочая папка игры" />
+	<Value Id="lSW" Content="Секретное слово для (де)шифровки дат-файлов" />
+	<Value Id="lPGS" Content="Нажать 'game start' после запуска игры" />
+	<Value Id="bSave" Content="Сохранить" />
+	<Value Id="bCha" Content="Отмена" />
+	<Value Id="wtGTL" Title="Перейти к строке..." />
+	<Value Id="lLN" Content="Номер линии" />
+	<Value Id="wtAbout" Title="О программе" />
+	<Value Id="wtError" Title="Ошибка!" />
+	<Value Id="bCTC" Content="Копировать в буфер обмена" />
+	<Value Id="bCon" Content="Продолжить" />
+	<Value Id="bExit" Content="Выйти из программы" />							   
+	<Value Id="bSMF" Content="Сохранить изм-ые файлы" />									    							  
+	<Value Id="wtList" Title="Список" />
+	<Value Id="wtHK" Title="Горячие клавиши" />
+	<Value Id="wtIPFS" Title="Импорт файлов в проект" />
+	<Value Id="lPRGF" Content="Путь к корневой папки игры" />
+    <Value Id="lSP" Content="Расширения файлов для поиска" />
+    <Value Id="bImport" Content="Импорт" />
+	<Value Id="bChancel" Content="Отмена" />
+	<Value Id="wtPA" Title="Подтвердить аргументы" />
+	<Value Id="lArgs" Content="Аргументы" />
+	<Value Id="bRun" Content="Запустить" />
+	<Value Id="bChancel2" Content="Отмена" />
+    <Value Id="bqYes" Text="Да" />	
+	<Value Id="bqNo" Text="Нет" />	
+	<Value Id="wtQ" Text="Вопрос" />	
+	<Value Id="qRAI" Text="Вы хотите удалить все объекты?" />	
+	<Value Id="wtInf" Text="Информация" />	
+	<Value Id="wtFNE" Text="Файл не существует." />	
+	<Value Id="tbRG" Text="Запуск" />	
+	<Value Id="tFNS" Text="Эта возможность не поддерживается для файлов которые вне проекта." />	
+	<Value Id="tRP" Text="Вы хотите убрать проект из списка?" />
+	<Value Id="tDRF" Text="Вы хотите удалить папку?" />
+	<Value Id="tFAO" Text="Файл уже открыт." />
+	<Value Id="tFNAE" Text="Папка с этим именем уже существует." />
+	<Value Id="tFiNAE" Text="Файл с этим именем уже существует." />
+	<Value Id="tDrop" Text="Переместить" />
+	<Value Id="tInto" Text="в" />
+    <Value Id="tProj" Text="Проект" />
+	<Value Id="etbProj" Text="Проект '{0}'" />
+	<Value Id="tLoad" Text="загружался" />
+	<Value Id="tSec" Text="секунд" />
+	<Value Id="dcPE" Title="Обозреватель проектов" />
+	<Value Id="dcErr" Title="Ошибки" />
+	<Value Id="dcDO" Title="Отладочный вывод" />	
+	<Value Id="dcSGV" Title="Статический графический просмоторщик" />	
+    <Value Id="tsgvCS" Text="Перезагрузить графические файлы" />
+	<Value Id="tsgvDBR" Text="Создать регион bdy" />
+	<Value Id="tsgvDIR" Text="Создать регион itr" />
+	<Value Id="tsgvDB" Text="Создать bpoint" />
+    <Value Id="tsgvDW" Text="Создать wpoint" />
+	<Value Id="tsgvDC" Text="Создать cpoint" />
+	<Value Id="tsgvDO" Text="Создать opoint" />
+	<Value Id="tsgvDCC" Text="Создать centerx и centery" />
+	<Value Id="tsgvICS" Text="Увеличить размер холста" />
+	<Value Id="tsgvDCS" Text="Уменьшить размер холста" />
+	<Value Id="tsgvNF" Text="Без фокуса" />
+	<Value Id="tsgvFTF" Text="Фокус на фрейме" />
+	<Value Id="tsgvFBF" Text="Фокус между фреймами" />
+	<Value Id="tsgvFNF" Text="Фокус на следующем фрейме" />
+	<Value Id="tsgvSAO" Text="Рисовать все объекты" />
+	<Value Id="tsgvSAB" Text="Рисовать все bdy" />
+	<Value Id="tsgvSAI" Text="Рисовать все itr" />
+	<Value Id="tsgvSC" Text="Маштабировать холст" />
+	<Value Id="tsgvNPrj" Text="Эта возможность работает только в контексте системы проектов"/>
+	<Value Id="wdReload" Text="Перезагрузить список оружия и напитков" />
+	<Value Id="cbiLW" Content="Лёгкое оружие" />    
+	<Value Id="cbiHW" Content="Тяжёлое оружие" />
+	<Value Id="cbiTW" Content="Метательное оружие" />
+	<Value Id="cbiDr" Content="Напитки" />
+	<Value Id="dcWDS" Title="Просмоторщик оружия и напитков" />
+	<Value Id="dcAP" Title="Аудиоплеер" />
+	<Value Id="miAP" Header="Показать/Скрыть Аудиоплеер" />
+	<Value Id="miWD" Header="Показать/Скрыть окно выбора оружия и напитков" />
+	<Value Id="cmiFI" Header="Перевернуть изображение" />
+	<Value Id="dcDFV" Title="Просмоторщик дат-файла" />
+	<Value Id="tSO" Text="Перезагрузить" />
+    <Value Id="dcSOFO"	Title="Появляемые объекты(opoint)" />
+	<Value Id="dcSA" Title="Спрайтовый аниматор" />
+	<Value Id="dcESA" Title="Расширеный спрайтовый аниматор" />
+</Dictionary>
